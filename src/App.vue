@@ -21,8 +21,8 @@ export default {
 }
 
 :root {
-  --color-red: #c7226c; // #e30613
-  --color-red-alpha: rgba(199, 34, 108, 0.9); //  rgba(227, 6, 19)
+  --color-red: #e30613; //#c7226c
+  --color-red-alpha: rgba(227, 6, 19, 0.9); //  rgba(227, 6, 19)
   --color-blue: #408ec6;
 }
 

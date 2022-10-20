@@ -7,7 +7,13 @@
         <p class="text">+7 (905) 623-23-30</p>
 
         <a class="label"> E-mail:</a>
-        <p class="text">novaeraarttechnologies@gmail.com</p>
+        <p class="text">info@neatech.ru</p>
+
+        <a class="label"> E-mail-2:</a>
+        <p class="text">artem@neatech.ru</p>
+
+        <a class="label"> Старший менеджер по работе с клиентами:</a>
+        <p class="text">alex@neatech.ru</p>
 
         <a class="label"> Адрес:</a>
         <p class="text">300026, Тула, проспект Ленина, 109</p>
@@ -58,7 +64,7 @@ export default {
     .text {
       font-weight: 400;
       font-size: 23px;
-      margin-bottom: 30px;
+      margin-bottom: 60px;
     }
 
     p {

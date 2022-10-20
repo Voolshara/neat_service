@@ -8,6 +8,7 @@
       thresholdTime: 1000,
     }"
     :pagination="{
+      enabled: false,
       clickable: true,
       dynamicBullets: true,
     }"

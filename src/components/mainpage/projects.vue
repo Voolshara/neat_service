@@ -12,6 +12,7 @@
       }"
       :navigation="true"
       :modules="modules"
+      autoplay
       class="mySwiperParalax"
     >
       <div class="parallax-bg" data-swiper-parallax="-23%"></div>
@@ -219,7 +220,7 @@ export default {
   }
 
   .subtitle {
-    font-weight: 200;
+    font-weight: 400;
     font-size: 20px;
     margin-bottom: 40px;
   }

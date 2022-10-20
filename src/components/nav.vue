@@ -1,11 +1,21 @@
 <template>
-  <div class="NavBar animate__animated animate__fadeInDown">
+  <div
+    v-if="isMobile()"
+    class="NavBar-mobile animate__animated animate__fadeInDown"
+  >
+    <img class="Logo" src="@/assets/logo_full.png" alt="" />
+    <div v-on:click="openMenu" class="menu-icon">
+      <div class="menu-icon-element"></div>
+      <div class="menu-icon-element"></div>
+      <div class="menu-icon-element"></div>
+    </div>
+  </div>
+  <div v-else class="NavBar animate__animated animate__fadeInDown">
     <img class="Logo" src="@/assets/logo_full.png" alt="" />
     <div v-if="this.$store.state.IsColorNavBlack" class="Nav Nav-white">
       <a class="base">Разработка</a>
       <a class="base">Системы позиционирования</a>
       <a class="base">IoT</a>
-
       <a class="special">Контакты</a>
     </div>
     <div v-else class="Nav Nav-black">
@@ -21,10 +31,70 @@
 <script>
 export default {
   name: "NavBar",
+  data() {
+    return {
+      windowHeight: window.innerHeight,
+    };
+  },
+
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener("resize", this.onResize);
+    });
+  },
+
+  beforeUnmount() {
+    window.removeEventListener("resize", this.onResize);
+  },
+
+  methods: {
+    onResize() {
+      this.windowHeight = window.innerHeight;
+    },
+    openMenu() {
+      console.log("openMenu");
+    },
+    isMobile() {
+      if (
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        )
+      ) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+  },
 };
 </script>
 
 <style lang="scss">
+.NavBar-mobile {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  margin-top: 30px;
+  justify-content: space-between;
+  align-items: center;
+
+  .menu-icon {
+    display: flex;
+    flex-direction: column;
+    height: 30px;
+    justify-content: space-between;
+    margin-right: 30px;
+  }
+
+  .menu-icon-element {
+    height: 6px;
+    width: 40px;
+    background-color: white;
+    border-radius: 400px;
+  }
+}
+
 .NavBar {
   position: absolute;
   z-index: 10;
@@ -47,10 +117,11 @@ export default {
 
   .Nav {
     padding-right: 30px;
-    font-size: 20px;
+    font-size: 22px;
     text-transform: uppercase;
     line-height: 40px;
     font-weight: 400;
+    margin-left: 20px;
     font-family: "Montserrat", sans-serif;
 
     display: flex;
@@ -58,7 +129,8 @@ export default {
 
     a {
       padding: 0 7px 0 7px;
-      margin: 0 20px 0 20px;
+      margin: 0 1vw 0 0vw;
+      text-align: center;
       cursor: pointer;
     }
 
@@ -68,7 +140,7 @@ export default {
 
     .base:hover {
       border-radius: 10px;
-      background-color: rgba($color: #c7226c, $alpha: 0.3);
+      background-color: rgba($color: var(--color-red), $alpha: 0.3);
       border: 1px solid var(--color-red);
     }
 
@@ -80,7 +152,7 @@ export default {
     }
 
     .special:hover {
-      color: #c7226c;
+      color: var(--color-red);
       background-color: rgba($color: black, $alpha: 0);
 
       padding: 5px 9px 5px 9px;
@@ -92,7 +164,7 @@ export default {
       padding: 5px 9px 5px 9px;
       border-radius: 10px;
       border: 1px solid var(--color-red);
-      color: #c7226c;
+      color: var(--color-red);
     }
 
     .special-white:hover {
@@ -103,10 +175,13 @@ export default {
       border-radius: 10px;
     }
   }
+}
 
-  .Logo {
-    width: 190px;
-    padding-left: 30px;
-  }
+.Logo {
+  width: 190px;
+  padding-left: 30px;
+}
+
+@media screen and (max-width: 1000px) {
 }
 </style>

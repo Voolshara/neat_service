@@ -1,13 +1,15 @@
 <template>
   <div class="VideoBox">
-    <video
-      class="video"
-      src="@/assets/bg-video.mp4"
-      autoplay
-      loop
-      muted
-      autopictureinpicture
-    ></video>
+    <div class="video-container">
+      <video
+        class="video"
+        src="@/assets/bg-video.mp4"
+        autoplay
+        loop
+        muted
+        autopictureinpicture
+      ></video>
+    </div>
     <div class="GreyFata"></div>
     <div class="NameBlock">
       <div
@@ -37,11 +39,18 @@ export default {
 .VideoBox {
   color: white;
 
+  .video-container {
+    display: flex;
+    justify-content: center;
+  }
   .video {
     position: absolute;
     z-index: 1;
-    min-width: 100%;
-    min-height: 100%;
+
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    object-fit: cover;
   }
 
   .GreyFata {
