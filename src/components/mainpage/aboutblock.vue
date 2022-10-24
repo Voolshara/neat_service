@@ -150,4 +150,41 @@ export default {
   color: black;
   background-color: white;
 }
+
+@media screen and (max-width: 1000px) {
+  .MainText {
+    font-size: 30px;
+    margin-top: 130px;
+    margin-bottom: 30px;
+  }
+
+  @media screen and (max-height: 700px) {
+    .MainText {
+      margin-bottom: 10px;
+    }
+  }
+
+  .Achivments {
+    display: flex;
+    flex-direction: column;
+
+    .ach-elemnet {
+      margin: 5px;
+      width: 350px;
+      .ach-img {
+        width: 50px;
+        margin-right: 20px;
+      }
+      .ach-label {
+        font-size: 20px;
+        padding-bottom: 1px;
+      }
+
+      .ach-disc {
+        font-size: 12px;
+        width: 200px;
+      }
+    }
+  }
+}
 </style>

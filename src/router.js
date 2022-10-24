@@ -5,6 +5,22 @@ const routes = [
     path: "/",
     component: () => import("@/routes/main.vue"),
   },
+  {
+    path: "/dev",
+    component: () => import("@/routes/dev.vue"),
+  },
+  {
+    path: "/position",
+    component: () => import("@/routes/position.vue"),
+  },
+  {
+    path: "/iot",
+    component: () => import("@/routes/iot.vue"),
+  },
+  {
+    path: "/about",
+    component: () => import("@/routes/contacts.vue"),
+  },
 ];
 
 const router = createRouter({

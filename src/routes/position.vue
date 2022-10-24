@@ -1,9 +1,9 @@
 <template>
-  <div>MainPage</div>
+  <div>Position Page</div>
 </template>
 
 <script>
 export default {
-  name: "MainPage",
+  name: "PositionPage",
 };
 </script>

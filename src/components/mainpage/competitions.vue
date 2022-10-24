@@ -7,7 +7,7 @@
         :slidesPerView="3"
         :centeredSlides="true"
         :grabCursor="true"
-        :spaceBetween="0"
+        :spaceBetween="30"
         :pagination="false"
         :modules="modules"
         :autoplay="autoplay"
@@ -265,14 +265,14 @@ export default {
 
 <style lang="scss" scoped>
 .CompSwiper {
-  width: 600px;
-  height: 600px;
+  width: 400px;
+  height: 55vh;
 
   position: relative;
   z-index: 2;
 
   border-right: 1px solid var(--color-red);
-  padding-right: 40px;
+  padding-right: 70px;
 }
 
 .oneCompetition {
@@ -280,12 +280,14 @@ export default {
   flex-direction: row;
   align-items: center;
 
+  width: 400px;
+
   border: 1px solid rgba($color: #000000, $alpha: 0);
 
-  padding-bottom: 30px;
-  padding-top: 30px;
-  padding-right: 20px;
-  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
 
   border-radius: 30px;
 
@@ -294,17 +296,17 @@ export default {
   }
 
   .imgComp {
-    height: 80px;
+    height: 60px;
     padding-right: 30px;
   }
 
   .labelComp {
-    font-size: 27px;
-    margin-bottom: 10px;
+    font-size: 23px;
+    margin-bottom: 7px;
   }
 
   .descComp {
-    width: 400px;
+    width: 300px;
     font-weight: 200;
   }
 }
@@ -332,10 +334,18 @@ export default {
   flex-direction: column;
 
   .Name {
-    font-size: 70px;
+    font-size: 50px;
     font-size: 200;
     margin: 0;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-height: 840px) {
+  .container {
+    .Name {
+      margin-bottom: 50px;
+    }
   }
 }
 </style>

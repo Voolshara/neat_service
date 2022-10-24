@@ -141,8 +141,9 @@ export default {
 
 <style lang="scss" scoped>
 .compData {
-  width: 800px;
-  padding-left: 200px;
+  padding-left: 5vw;
+  width: 600px;
+  height: 450px;
 
   display: flex;
   justify-content: center;
@@ -150,22 +151,24 @@ export default {
 
   .competitionEl {
     .CompImg {
-      width: 250px;
+      width: 200px;
       margin-right: 40px;
       margin-left: 40px;
     }
 
     .CompLabel {
-      font-size: 25px;
+      font-size: 20px;
       font-weight: 600;
+      width: 400px;
     }
 
     .CompLabel-min {
       font-size: 15px;
       font-weight: 200;
+      width: 400px;
     }
 
-    margin-bottom: 50px;
+    margin-bottom: 20px;
   }
 
   .COELREVERS {

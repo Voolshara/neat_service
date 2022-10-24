@@ -261,4 +261,62 @@ export default {
   flex-direction: column;
   width: 950px;
 }
+
+@media screen and (max-width: 1500px) {
+  .img-prj {
+    width: 400px;
+    margin-left: 30px;
+  }
+  .swiper-element {
+    .word-prj {
+      font-weight: 200;
+    }
+    .title {
+      margin-bottom: 10px;
+      font-size: 33px;
+    }
+
+    .subtitle {
+      font-weight: 400;
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+
+    .text-label {
+      font-weight: 400;
+      font-size: 30px;
+    }
+
+    .tech {
+      display: grid;
+      grid-template-columns: 350px 350px;
+
+      .tech-img {
+        width: 30px;
+        height: 30px;
+
+        margin-right: 30px;
+      }
+
+      .tech-el {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        margin-right: 40px;
+        margin-bottom: 20px;
+      }
+      p {
+        margin: 0;
+      }
+    }
+
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 650px;
+  }
+}
 </style>

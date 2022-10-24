@@ -3,37 +3,62 @@
     v-if="isMobile()"
     class="NavBar-mobile animate__animated animate__fadeInDown"
   >
-    <img class="Logo" src="@/assets/logo_full.png" alt="" />
-    <div v-on:click="openMenu" class="menu-icon">
+    <router-link to="/">
+      <img class="Logo" src="@/assets/logo_full.png" alt="" />
+    </router-link>
+    <div
+      v-if="this.$store.state.IsColorNavBlack"
+      v-on:click="openMenu"
+      class="menu-icon"
+    >
       <div class="menu-icon-element"></div>
       <div class="menu-icon-element"></div>
       <div class="menu-icon-element"></div>
+    </div>
+    <div v-else v-on:click="openMenu" class="menu-icon">
+      <div class="menu-icon-element-black"></div>
+      <div class="menu-icon-element-black"></div>
+      <div class="menu-icon-element-black"></div>
+    </div>
+    <div v-if="isOpenMenu" class="MenuDropDown-container">
+      <AdditionalNav />
     </div>
   </div>
   <div v-else class="NavBar animate__animated animate__fadeInDown">
-    <img class="Logo" src="@/assets/logo_full.png" alt="" />
+    <router-link to="/"
+      ><img class="Logo" src="@/assets/logo_full.png" alt="" />
+    </router-link>
     <div v-if="this.$store.state.IsColorNavBlack" class="Nav Nav-white">
-      <a class="base">Разработка</a>
-      <a class="base">Системы позиционирования</a>
-      <a class="base">IoT</a>
-      <a class="special">Контакты</a>
+      <router-link to="/dev" class="base">Разработка</router-link>
+      <router-link to="/position" class="base"
+        >Системы позиционирования</router-link
+      >
+      <router-link to="/iot" class="base">IoT</router-link>
+      <router-link to="/about" class="special">Контакты</router-link>
     </div>
     <div v-else class="Nav Nav-black">
-      <a class="base">Разработка</a>
-      <a class="base">Системы позиционирования</a>
-      <a class="base">IoT</a>
+      <router-link to="/dev" class="base">Разработка</router-link>
+      <router-link to="/position" class="base"
+        >Системы позиционирования</router-link
+      >
+      <router-link to="/iot" class="base">IoT</router-link>
 
-      <a class="special-white">Контакты</a>
+      <router-link to="/about" class="special-white">Контакты</router-link>
     </div>
   </div>
 </template>
 
 <script>
+import AdditionalNav from "./additionalNav.vue";
 export default {
   name: "NavBar",
+  components: {
+    AdditionalNav,
+  },
   data() {
     return {
       windowHeight: window.innerHeight,
+      isOpenMenu: false,
     };
   },
 
@@ -52,7 +77,14 @@ export default {
       this.windowHeight = window.innerHeight;
     },
     openMenu() {
-      console.log("openMenu");
+      this.isOpenMenu = this.isOpenMenu ? false : true;
+      /*if (this.isOpenMenu) {
+        this.isOpenMenu = false;
+        this.$store.commit("SetBlackNav");
+      } else {
+        this.isOpenMenu = true;
+        this.$store.commit("SetWhiteNav");
+      }*/
     },
     isMobile() {
       if (
@@ -70,6 +102,18 @@ export default {
 </script>
 
 <style lang="scss">
+.MenuDropDown-container {
+  position: absolute;
+  top: -30px;
+
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
 .NavBar-mobile {
   position: absolute;
   z-index: 10;
@@ -93,6 +137,13 @@ export default {
     background-color: white;
     border-radius: 400px;
   }
+
+  .menu-icon-element-black {
+    height: 6px;
+    width: 40px;
+    background-color: black;
+    border-radius: 400px;
+  }
 }
 
 .NavBar {
@@ -108,11 +159,15 @@ export default {
   padding-top: 20px;
 
   .Nav-white {
-    color: white;
+    a {
+      color: white;
+    }
   }
 
   .Nav-black {
-    color: black;
+    a {
+      color: black;
+    }
   }
 
   .Nav {
@@ -132,6 +187,8 @@ export default {
       margin: 0 1vw 0 0vw;
       text-align: center;
       cursor: pointer;
+
+      text-decoration: none;
     }
 
     .base {

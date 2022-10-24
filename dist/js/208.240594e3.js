@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkneat_service"]=self["webpackChunkneat_service"]||[]).push([[208],{2208:function(e,n,a){a.r(n),a.d(n,{default:function(){return s}});var r=a(3396);function t(e,n,a,t,u,i){return(0,r.wg)(),(0,r.iD)("div",null,"MainPage")}var u={name:"MainPage"},i=a(89);const c=(0,i.Z)(u,[["render",t]]);var s=c}}]);
+//# sourceMappingURL=208.240594e3.js.map
