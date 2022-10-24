@@ -12,7 +12,7 @@
         <a class="label"> E-mail-2:</a>
         <p class="text">artem@neatech.ru</p>
 
-        <a class="label"> Старший менеджер по работе с клиентами:</a>
+        <a class="label"> Старший менеджер:</a>
         <p class="text">alex@neatech.ru</p>
 
         <a class="label"> Адрес:</a>
@@ -75,6 +75,50 @@ export default {
   .map {
     width: 600px;
     margin-left: 100px;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .contactText {
+    font-size: 50px;
+    margin: 0;
+    margin-bottom: 40px;
+  }
+
+  .mainContacts {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+
+    .contacts {
+      display: grid;
+      grid-template-columns: auto auto;
+      width: 600px;
+
+      .label {
+        font-weight: 200;
+        font-size: 25px;
+
+        margin-right: 30px;
+        text-align: right;
+      }
+
+      .text {
+        font-weight: 400;
+        font-size: 23px;
+        margin-bottom: 60px;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+
+    .map {
+      width: 400px;
+      margin-left: 50px;
+    }
   }
 }
 
