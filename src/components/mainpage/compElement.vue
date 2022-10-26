@@ -192,4 +192,89 @@ export default {
     align-content: center;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .compData {
+    padding-left: 1vw;
+    width: 320px;
+    height: 450px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    .competitionEl {
+      .CompImg {
+        width: 70px;
+        margin-right: 10px;
+        margin-left: 0;
+      }
+
+      .CompLabel {
+        font-size: 15px;
+        font-weight: 600;
+        width: 220px;
+        margin-bottom: 5px;
+      }
+
+      .CompLabel-min {
+        font-size: 10px;
+        font-weight: 200;
+        width: 220px;
+        margin: 0;
+      }
+
+      margin-bottom: 5px;
+    }
+
+    .COELREVERS {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row-reverse;
+    }
+
+    .COEL {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+    }
+
+    .competitionInfo {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+    }
+  }
+
+  @media screen and (min-height: 700px) {
+    .compData {
+      .competitionEl {
+        .CompImg {
+          width: 70px;
+          margin-right: 10px;
+          margin-left: 0;
+        }
+
+        .CompLabel {
+          font-size: 18px;
+          font-weight: 600;
+          width: 220px;
+          margin-bottom: 5px;
+        }
+
+        .CompLabel-min {
+          font-size: 12px;
+          font-weight: 200;
+          width: 220px;
+          margin: 0;
+        }
+
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
 </style>

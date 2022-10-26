@@ -18,14 +18,30 @@
         <a class="label"> Адрес:</a>
         <p class="text">300026, Тула, проспект Ленина, 109</p>
       </div>
-      <img class="map" src="/img/map.png" alt="map" />
+      <YandexMap :settings="settings" :coordinates="[32, 50]" class="map" />
     </div>
   </div>
 </template>
 
 <script>
+import { YandexMap } from "vue-yandex-maps";
+
 export default {
   name: "CantacBlock",
+  components: {
+    YandexMap,
+  },
+  data() {
+    return {
+      settings: {
+        apiKey: "", // Индивидуальный ключ API
+        lang: "ru_RU", // Используемый язык
+        coordorder: "latlong", // Порядок задания географических координат
+        debug: false, // Режим отладки
+        version: "2.1", // Версия Я.Карт
+      },
+    };
+  },
   methods: {
     change_dynamic_class() {
       //   if (val) {
@@ -80,34 +96,62 @@ export default {
 
 @media screen and (max-width: 1500px) {
   .contactText {
-    font-size: 50px;
-    margin: 0;
     margin-bottom: 40px;
   }
 
   .mainContacts {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-direction: row;
+    .contacts {
+      width: 600px;
+    }
+
+    .map {
+      width: 400px;
+      height: 400px;
+      margin-left: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contactText {
+    font-size: 33px;
+    margin-bottom: 10px;
+  }
+
+  @media screen and (min-height: 700px) {
+    .contactText {
+      margin-bottom: 30px;
+    }
+
+    .map {
+      margin-top: 20px;
+      height: 320px;
+      margin-left: 0;
+    }
+  }
+
+  .mainContacts {
+    justify-content: center;
+    flex-direction: column;
 
     .contacts {
       display: grid;
       grid-template-columns: auto auto;
-      width: 600px;
+      width: 320px;
+      margin-bottom: 10px;
 
       .label {
-        font-weight: 200;
-        font-size: 25px;
+        font-weight: 400;
+        font-size: 14px;
 
         margin-right: 30px;
         text-align: right;
       }
 
       .text {
-        font-weight: 400;
-        font-size: 23px;
-        margin-bottom: 60px;
+        font-weight: 600;
+        font-size: 18px;
+        margin-bottom: 10px;
       }
 
       p {
@@ -116,8 +160,9 @@ export default {
     }
 
     .map {
-      width: 400px;
-      margin-left: 50px;
+      width: 320px;
+      height: 270px;
+      margin-left: 0;
     }
   }
 }
@@ -129,7 +174,9 @@ export default {
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
+
+  margin-top: 110px;
 }
 </style>

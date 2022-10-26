@@ -10,7 +10,7 @@
       :pagination="{
         clickable: true,
       }"
-      :navigation="true"
+      :navigation="isUseNavigation"
       :modules="modules"
       autoplay
       class="mySwiperParalax"
@@ -70,6 +70,7 @@ export default {
   },
   data() {
     return {
+      isUseNavigation: true,
       projects: [
         {
           id: 0,
@@ -154,11 +155,17 @@ export default {
       modules: [Parallax, Pagination, Navigation],
     };
   },
+  beforeMount() {
+    if (
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    )
+      this.isUseNavigation = false;
+  },
   methods: {
     change_dynamic_class(val) {
       if (val) {
-        console.log("sdas");
-
         // this.DynamicClassLabel =
         //   "animate__animated animate__zoomIn animate__delay-800ms";
         // this.DynamicsClassText =
@@ -317,6 +324,111 @@ export default {
     justify-content: center;
     flex-direction: column;
     width: 650px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .swiper-element-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    color: white;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+
+  .img-prj {
+    width: 250px;
+    margin-left: 0;
+  }
+
+  .swiper-element {
+    .word-prj {
+      font-weight: 200;
+    }
+    .title {
+      margin-bottom: 5px;
+      font-size: 20px;
+    }
+
+    .subtitle {
+      font-weight: 400;
+      font-size: 10px;
+      margin-bottom: 5px;
+    }
+
+    .text-label {
+      font-weight: 400;
+      font-size: 15px;
+      margin: 3px;
+    }
+
+    .tech {
+      display: flex;
+      flex-direction: column;
+
+      .tech-img {
+        width: 15px;
+        height: 15px;
+
+        margin-right: 10px;
+      }
+
+      .tech-el {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        margin-right: 40px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 10px;
+        margin: 0;
+      }
+    }
+
+    margin-left: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    width: 320px;
+    margin-top: 110px;
+  }
+
+  @media screen and (min-height: 750px) {
+    .swiper-element {
+      .title {
+        margin-bottom: 7px;
+        font-size: 23px;
+      }
+
+      .subtitle {
+        font-size: 12px;
+      }
+
+      .text-label {
+        font-size: 18px;
+        margin: 7px;
+      }
+
+      .tech {
+        .tech-img {
+          width: 15px;
+          height: 15px;
+
+          margin-right: 10px;
+        }
+
+        p {
+          font-size: 15px;
+          margin: 2px;
+        }
+      }
+    }
   }
 }
 </style>

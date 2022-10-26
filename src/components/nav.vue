@@ -119,7 +119,7 @@ export default {
   z-index: 10;
   width: 100%;
   display: flex;
-  margin-top: 30px;
+  margin-top: 10px;
   justify-content: space-between;
   align-items: center;
 
