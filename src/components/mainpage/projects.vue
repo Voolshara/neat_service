@@ -331,7 +331,7 @@ export default {
   .swiper-element-container {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     flex-direction: column;
 
     color: white;
@@ -396,7 +396,7 @@ export default {
     justify-content: center;
     flex-direction: column;
     width: 320px;
-    margin-top: 110px;
+    margin-top: 50px;
   }
 
   @media screen and (min-height: 750px) {
@@ -428,6 +428,8 @@ export default {
           margin: 2px;
         }
       }
+
+      align-items: center;
     }
   }
 }

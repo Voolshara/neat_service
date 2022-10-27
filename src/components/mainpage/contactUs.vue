@@ -9,10 +9,12 @@
         <a class="label"> E-mail:</a>
         <p class="text">info@neatech.ru</p>
 
-        <a class="label"> E-mail-2:</a>
+        <a class="label"> Директор:</a>
         <p class="text">artem@neatech.ru</p>
 
-        <a class="label"> Старший менеджер:</a>
+        <a class="label" style="margin-bottom: 10px">
+          Старший менеджер по работе с клиентами:</a
+        >
         <p class="text">alex@neatech.ru</p>
 
         <a class="label"> Адрес:</a>
@@ -79,6 +81,8 @@ export default {
 
     .text {
       font-weight: 400;
+      display: flex;
+      align-items: center;
       font-size: 23px;
       margin-bottom: 60px;
     }

@@ -9,9 +9,7 @@
                 {{ el.label }}
               </p>
               <p class="CompLabel-min">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Provident rerum a sapiente eos officia esse! Nemo provident
-                maxime minus ipsum!
+                {{ el.text }}
               </p>
             </div>
             <img class="CompImg" :src="el.src" alt="" />
@@ -22,9 +20,7 @@
                 {{ el.label }}
               </p>
               <p class="CompLabel-min">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Provident rerum a sapiente eos officia esse! Nemo provident
-                maxime minus ipsum!
+                {{ el.text }}
               </p>
             </div>
             <img class="CompImg" :src="el.src" alt="" />
@@ -49,11 +45,13 @@ export default {
             id: 0,
             label: "Система для маркировки товаров на складе",
             src: "/img/competitions/system_factory.jpg",
+            text: "Разработан полнофункциональный прототип устройства по маркировки товаров на складе",
           },
           {
             id: 1,
             label: "Вспомогательный робот-спелеолог",
             src: "/img/competitions/system_factory.jpg",
+            text: "Робот помогает спелеологам получить доступ в труднодоступные места, на борту имеется камера",
           },
         ],
 
@@ -63,6 +61,7 @@ export default {
             label:
               "Система бесперебойного питания загородного дома на базе альтернативных источников энергии",
             src: "/img/competitions/green_home.jpg",
+            text: "Данная система позволяет обеспечивать дом электричеством при её отключении, а так же позволяет экономить денежные средства на оплату электроэнергии",
           },
         ],
 
@@ -71,24 +70,22 @@ export default {
             id: 0,
             label: "Система контроля теплицы",
             src: "/img/competitions/green_garden.jpg",
+            text: "Данная система позволяет отслеживать температуру и влажность в теплицах, а так же управлять освещением в ней",
           },
           {
             id: 1,
             label: "Desktop-приложение для управления беспилотным судном",
             src: "/img/competitions/sheep.png",
+            text: "Данное приложение позволяет осуществлять управление беспилотным судном, а так же выводит все данные необходимые для оценки состояния судна в реальном времени",
           },
         ],
 
         [
           {
             id: 0,
-            label: "Аккумуляторы для электрических лодочных моторов",
-            src: "/img/competitions/sheep_battery.jpg",
-          },
-          {
-            id: 1,
             label: "Power bank с поддержкой выхода 220В",
             src: "/img/competitions/power_220.jpg",
+            text: "Данное устройство позволяет заряжать устройства в походных условиях, а также использовать устройства работающие от 220В в дали от розеток",
           },
         ],
 
@@ -98,11 +95,13 @@ export default {
             label:
               "Корпус и конструкционные части для проекта «Всевидящее око»",
             src: "/img/competitions/smth_sheet.jpg",
+            text: "С помощью технологии 3D печати нами изготовлены конструкционные части и корпус для проекта «Всевидящее око»",
           },
           {
             id: 1,
             label: "Корпус для проекта «Wi-Fi репитер»",
             src: "/img/competitions/wifi.jpg",
+            text: "С помощью технологии 3D печати нами изготовлены и корпус для проекта «Wi-Fi репитер»",
           },
         ],
 
@@ -111,11 +110,7 @@ export default {
             id: 0,
             label: "Модули для системы Smart home",
             src: "/img/competitions/smart_house.jpg",
-          },
-          {
-            id: 1,
-            label: "Умный светильник-ночник с функцией будильник-рассвет",
-            src: "/img/competitions/alarm.jpeg",
+            text: "Модули позволяют управлять полезными нагрузками в доме, обеспечивать безопасность жилища, а так же контролировать климат в комнатах",
           },
         ],
 
@@ -125,12 +120,14 @@ export default {
             label:
               "Машинное зрение по распознаванию и определению положения человека для проекта «Всевидящее око»",
             src: "/img/competitions/CV_people.png",
+            text: "Данная разработка позволяет определять точное положение человека в пространстве, а так же отслеживать его передвижение",
           },
           {
             id: 1,
             label:
               "Искусственный интеллект для игры в шахматы для «Умной» шахматной доски",
             src: "/img/competitions/chess_robot.jpg",
+            text: "Данный ИИ позволяет «Умной» шахматной доске самостоятельно играть против людей различных уровней подготовки, уровень сложности игры настраивается",
           },
         ],
       ],
