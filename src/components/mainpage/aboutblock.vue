@@ -7,58 +7,59 @@
         <div>
           <p class="ach-label">Индивидуальный подход</p>
           <p class="ach-disc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est,
-            commodi
+            Наши специалисты проконсультируют Вас по любым вопросам, связанным с
+            вашим проектом, расскажут, насколько проект реализуем и есть ли
+            аналоги
           </p>
         </div>
       </div>
       <div :class="'ach-elemnet ' + dynamicAchiv[1]">
         <img class="ach-img" src="@/assets/check-mark.png" alt="img" />
         <div>
-          <p class="ach-label">Индивидуальный подход</p>
+          <p class="ach-label">Высококвалифицированные специалисты</p>
           <p class="ach-disc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est,
-            commodi
+            Наша команда на первом этапе работы рассчитает все расходы, которые
+            будут в процессе разработки и изготовления вашего устройства
           </p>
         </div>
       </div>
       <div :class="'ach-elemnet ' + dynamicAchiv[2]">
         <img class="ach-img" src="@/assets/check-mark.png" alt="img" />
         <div>
-          <p class="ach-label">Индивидуальный подход</p>
-          <p class="ach-disc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est,
-            commodi
-          </p>
+          <p class="ach-label">Гарантия качества</p>
+          <p class="ach-disc">Контроль качества на всех этапах работы</p>
         </div>
       </div>
       <div :class="'ach-elemnet ' + dynamicAchiv[3]">
         <img class="ach-img" src="@/assets/check-mark.png" alt="img" />
         <div>
-          <p class="ach-label">Индивидуальный подход</p>
+          <p class="ach-label">Выпуск нужной документации по продукту</p>
           <p class="ach-disc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est,
-            commodi
+            Наши специалисты подготовят документацию по изготовлению и
+            использованию вашего продукта, а так же проведут сертификацию
           </p>
         </div>
       </div>
       <div :class="'ach-elemnet ' + dynamicAchiv[4]">
         <img class="ach-img" src="@/assets/check-mark.png" alt="img" />
         <div>
-          <p class="ach-label">Индивидуальный подход</p>
+          <p class="ach-label">
+            Разработка как серийных, так и уникальных продуктов
+          </p>
           <p class="ach-disc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est,
-            commodi
+            Мы подготовим документацию, найдём изготовителей, договоримся с ними
+            и запустим производство Вашего изделия
           </p>
         </div>
       </div>
       <div :class="'ach-elemnet ' + dynamicAchiv[5]">
         <img class="ach-img" src="@/assets/check-mark.png" alt="img" />
         <div>
-          <p class="ach-label">Индивидуальный подход</p>
+          <p class="ach-label">Нацелены на долгосрочное сотрудничество</p>
           <p class="ach-disc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est,
-            commodi
+            Мы разработаем, изготовим прототип, золотой образец, подготовим
+            документацию, запустим в производство и будем оказывать поддержку
+            вашего изделия
           </p>
         </div>
       </div>
@@ -125,6 +126,7 @@ export default {
     }
 
     .ach-label {
+      width: 400px;
       color: black;
       font-weight: 400;
       padding-bottom: 15px;
@@ -154,14 +156,18 @@ export default {
 @media screen and (max-width: 1000px) {
   .MainText {
     font-size: 30px;
-    margin-top: 130px;
-    margin-bottom: 30px;
+    margin-top: 110px;
+    margin-bottom: 7px;
   }
 
-  @media screen and (max-height: 700px) {
+  @media screen and (max-height: 500px) {
     .MainText {
       margin-bottom: 10px;
     }
+  }
+
+  .about {
+    justify-content: flex-start;
   }
 
   .Achivments {
@@ -176,13 +182,43 @@ export default {
         margin-right: 20px;
       }
       .ach-label {
-        font-size: 20px;
+        width: 270px;
+        font-size: 17px;
         padding-bottom: 1px;
       }
 
       .ach-disc {
-        font-size: 12px;
+        font-size: 10px;
         width: 200px;
+      }
+    }
+  }
+
+  @media screen and (min-width: 600px) {
+    .MainText {
+      font-size: 50px;
+    }
+    .Achivments {
+      display: flex;
+      flex-direction: column;
+
+      .ach-elemnet {
+        margin: 5px;
+        width: 500px;
+        .ach-img {
+          width: 50px;
+          margin-right: 20px;
+        }
+        .ach-label {
+          width: 500px;
+          font-size: 30px;
+          padding-bottom: 10px;
+        }
+
+        .ach-disc {
+          font-size: 15px;
+          width: 500px;
+        }
       }
     }
   }
