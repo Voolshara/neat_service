@@ -3,7 +3,7 @@
     <p :class="'MainText ' + DynamicClassText">Наши достоинства</p>
     <div class="Achivments">
       <div :class="'ach-elemnet ' + dynamicAchiv[0]">
-        <img class="ach-img" src="@/assets/check-mark.png" alt="img" />
+        <img class="ach-img" src="@/assets/individual.png" alt="img" />
         <div>
           <p class="ach-label">Индивидуальный подход</p>
           <p class="ach-disc">
@@ -14,7 +14,7 @@
         </div>
       </div>
       <div :class="'ach-elemnet ' + dynamicAchiv[1]">
-        <img class="ach-img" src="@/assets/check-mark.png" alt="img" />
+        <img class="ach-img" src="@/assets/specialists.png" alt="img" />
         <div>
           <p class="ach-label">Высококвалифицированные специалисты</p>
           <p class="ach-disc">
@@ -24,14 +24,14 @@
         </div>
       </div>
       <div :class="'ach-elemnet ' + dynamicAchiv[2]">
-        <img class="ach-img" src="@/assets/check-mark.png" alt="img" />
+        <img class="ach-img" src="@/assets/quality.png" alt="img" />
         <div>
           <p class="ach-label">Гарантия качества</p>
           <p class="ach-disc">Контроль качества на всех этапах работы</p>
         </div>
       </div>
       <div :class="'ach-elemnet ' + dynamicAchiv[3]">
-        <img class="ach-img" src="@/assets/check-mark.png" alt="img" />
+        <img class="ach-img" src="@/assets/documents.png" alt="img" />
         <div>
           <p class="ach-label">Выпуск нужной документации по продукту</p>
           <p class="ach-disc">
@@ -41,7 +41,7 @@
         </div>
       </div>
       <div :class="'ach-elemnet ' + dynamicAchiv[4]">
-        <img class="ach-img" src="@/assets/check-mark.png" alt="img" />
+        <img class="ach-img" src="@/assets/industry.png" alt="img" />
         <div>
           <p class="ach-label">
             Разработка как серийных, так и уникальных продуктов
@@ -53,7 +53,7 @@
         </div>
       </div>
       <div :class="'ach-elemnet ' + dynamicAchiv[5]">
-        <img class="ach-img" src="@/assets/check-mark.png" alt="img" />
+        <img class="ach-img" src="@/assets/parthnership.png" alt="img" />
         <div>
           <p class="ach-label">Нацелены на долгосрочное сотрудничество</p>
           <p class="ach-disc">
