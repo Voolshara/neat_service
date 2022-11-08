@@ -259,7 +259,10 @@
           </div></swiper-slide
         >
       </swiper>
-      <CompElement :activeIndexComp="activeIndexComp" />
+      <CompElement
+        @stop_scroll="stop_scroll_method"
+        :activeIndexComp="activeIndexComp"
+      />
     </div>
   </div>
 </template>
@@ -294,14 +297,14 @@ export default {
   methods: {
     change_dynamic_class(val) {
       if (val) {
-        this.autoplay = {
-          delay: 4000,
-        };
         // this.DynamicClassLabel =
         //   "animate__animated animate__zoomIn animate__delay-800ms";
         // this.DynamicsClassText =
         //   "animate__animated animate__fadeInUp animate__delay-800ms";
       }
+    },
+    stop_scroll_method() {
+      this.autoplay = { delay: 1000000 };
     },
     isMobile() {
       if (
