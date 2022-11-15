@@ -1,5 +1,9 @@
 <template>
-  <div class="container">
+  <div
+    class="container"
+    v-animate-onscroll="{ down: 'animated fadeInLeft' }"
+    data-animate-onscroll-offset="100"
+  >
     <div class="label">
       Внедрить очень просто
       <div class="label-2">
@@ -52,6 +56,11 @@ export default {
 
     font-weight: 800;
     font-size: 100px;
+  }
+
+  .circle:hover {
+    background-color: red;
+    color: white;
   }
 
   .text {

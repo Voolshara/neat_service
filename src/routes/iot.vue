@@ -28,16 +28,18 @@
     <HowWork />
     <Factory />
     <Integretion />
+    <Iotprojects />
   </div>
 </template>
 
 <script>
 import HowWork from "@/components/iotpage/howWork.vue";
 import Integretion from "@/components/iotpage/integretion.vue";
+import Iotprojects from "@/components/iotpage/iotprojects.vue";
 import particlesbg from "@/components/iotpage/particlesbg.vue";
 import Factory from "@/components/iotpage/RealIOT/factory.vue";
 export default {
-  components: { particlesbg, HowWork, Factory, Integretion },
+  components: { particlesbg, HowWork, Factory, Integretion, Iotprojects },
   name: "IOTPage",
   data() {
     return {};
@@ -121,7 +123,7 @@ body::-webkit-scrollbar {
     .cleverDesc {
       text-align: right;
       width: 400px;
-      font-weight: 200;
+      font-weight: 400;
       font-size: 14px;
     }
   }
