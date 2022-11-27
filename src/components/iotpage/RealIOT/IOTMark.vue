@@ -26,12 +26,15 @@ export default {
   top: 0;
   display: none;
   z-index: 3;
+  img {
+    height: 20vh;
+  }
 }
 
 .marktext {
   position: absolute;
   top: 80px;
-  left: 80px;
+  left: 60px;
   z-index: 2;
   font-weight: 400;
   background-color: rgba($color: #000000, $alpha: 0.3);
@@ -43,6 +46,7 @@ export default {
   position: absolute;
   top: 4px;
   z-index: 4;
+  height: 20vh;
 }
 
 .markpart1:hover + .markpart2 {

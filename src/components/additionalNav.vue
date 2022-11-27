@@ -3,9 +3,7 @@
     <div class="topSpace"></div>
     <div class="NavContainer">
       <router-link to="/dev" class="base">Разработка</router-link>
-      <router-link to="/position" class="base"
-        >Системы позиционирования</router-link
-      >
+      <router-link to="/slp" class="base">Системы позиционирования</router-link>
       <router-link to="/iot" class="base">IoT</router-link>
       <router-link to="/about" class="special">Контакты</router-link>
     </div>

@@ -30,17 +30,13 @@
     </router-link>
     <div v-if="this.$store.state.IsColorNavBlack" class="Nav Nav-white">
       <router-link to="/dev" class="base">Разработка</router-link>
-      <router-link to="/position" class="base"
-        >Системы позиционирования</router-link
-      >
+      <router-link to="/slp" class="base">Системы позиционирования</router-link>
       <router-link to="/iot" class="base">IoT</router-link>
       <router-link to="/about" class="special">Контакты</router-link>
     </div>
     <div v-else class="Nav Nav-black">
       <router-link to="/dev" class="base">Разработка</router-link>
-      <router-link to="/position" class="base"
-        >Системы позиционирования</router-link
-      >
+      <router-link to="/slp" class="base">Системы позиционирования</router-link>
       <router-link to="/iot" class="base">IoT</router-link>
 
       <router-link to="/about" class="special-white">Контакты</router-link>

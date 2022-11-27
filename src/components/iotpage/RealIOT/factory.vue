@@ -69,35 +69,35 @@ export default {
 
 .mark-1 {
   position: absolute;
-  top: 15%;
-  left: 37%;
+  top: 25%;
+  left: 38%;
   z-index: 2;
 }
 
 .mark-2 {
   position: absolute;
-  top: 48%;
+  top: 58%;
   left: 12%;
   z-index: 2;
 }
 
 .mark-3 {
   position: absolute;
-  top: 55%;
-  left: 67%;
+  top: 63%;
+  left: 70%;
   z-index: 2;
 }
 
 .mark-4 {
   position: absolute;
-  top: 18%;
+  top: 28%;
   left: 5%;
   z-index: 2;
 }
 
 .mark-5 {
   position: absolute;
-  top: 18%;
+  top: 28%;
   left: 85%;
   z-index: 2;
 }

@@ -10,7 +10,7 @@ const routes = [
     component: () => import("@/routes/dev.vue"),
   },
   {
-    path: "/position",
+    path: "/slp",
     component: () => import("@/routes/position.vue"),
   },
   {
