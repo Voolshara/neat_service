@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkneat_service"]=self["webpackChunkneat_service"]||[]).push([[651],{8651:function(e,n,r){r.r(n),r.d(n,{default:function(){return c}});var t=r(3396);function i(e,n,r,i,a,u){return(0,t.wg)(),(0,t.iD)("div",null,"Position Page")}var a={name:"PositionPage"},u=r(89);const s=(0,u.Z)(a,[["render",i]]);var c=s}}]);
-//# sourceMappingURL=651.e5b7a3bc.js.map

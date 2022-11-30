@@ -1,10 +1,10 @@
 <template>
   <div class="container">
-    <div class="main-block">
-      <div class="label" @mouseover="zoneHover">
+    <div class="main-block" @mouseover="zoneHover">
+      <div class="label">
         <div class="text">
           Система
-          <div class="highlightZone">зонального</div>
+          <div class="highlightZone">{{ nameBlock[activeIndex] }}</div>
           позиционирования
         </div>
         <div class="imgBlock">
@@ -23,10 +23,144 @@
         :mousewheel="true"
         :modules="modules"
       >
-        <swiper-slide class="swiperEl">Slide 1</swiper-slide>
-        <swiper-slide class="swiperEl">Slide 2</swiper-slide>
-        <swiper-slide class="swiperEl">Slide 3</swiper-slide>
+        <!-- _________________________________________________1_______________________________ -->
+
+        <swiper-slide class="swiperEl"
+          ><Characters
+            :label="'Система зонального позиционирования'"
+            :system="[
+              'Отслеживать текущее местоположение персонала на плане объекта',
+              'Отслеживать активное время в движении',
+              'Контролировать неподвижность сотрудника с меткой',
+              'Создавать зоны для сотрудников',
+              'Определять падение',
+              'Контролировать наличие защитной экипировки',
+            ]"
+            :chacharacters="[
+              'Автономность до 3-х лет',
+              'Метка в виде карты может иметь функциональность Wiegand карты',
+            ]"
+          />
+          <div class="additionalContainer">
+            <Description
+              :type="'зонального'"
+              :text="'Определения местоположения с помощью тегов и точек доступа, фиксирующих присутствие тега'"
+            />
+            <advantages :type="true" :text="'Автономность'" />
+            <advantages :type="true" :text="'Использование в помещениях'" />
+            <advantages :type="false" :text="'Точность'" />
+            <advantages
+              :type="false"
+              :text="'Невозможность использования на открытом воздухе'"
+            />
+          </div>
+        </swiper-slide>
+        <!-- _________________________________________________2_______________________________ -->
+        <swiper-slide class="swiperEl"
+          ><Characters
+            :label="'Система глобального позиционирования'"
+            :system="[
+              'Отслеживать текущее местоположение персонала на карте',
+              'Отслеживать сигнал от метки при нажатии тревожной кнопки',
+              'Контролировать сон на рабочем месте или полную неподвижность сотрудника с меткой',
+              'Определение падения',
+              'Строить отчеты по маршрутам за любой период',
+            ]"
+            :chacharacters="[
+              'Точность 5-12 метров',
+              'Автономность до 7 дней',
+              'Возможность питания от сторонних источников питания',
+            ]"
+          />
+          <div class="additionalContainer">
+            <Description
+              :type="'глобального'"
+              :text="'Определения местоположения с помощью спутников GPS, ГЛОНАСС, Galileo, Compass'"
+            />
+            <advantages
+              :type="true"
+              :text="'Использование на открытом воздухе'"
+            />
+            <advantages
+              :type="false"
+              :text="'Практически невозможно использовать в помещениях'"
+            />
+            <advantages :type="false" :text="'Автономность'" />
+            <advantages :type="false" :text="'Точность'" />
+          </div>
+        </swiper-slide>
+        <!-- _________________________________________________3_______________________________ -->
+
+        <swiper-slide class="swiperEl"
+          ><Characters
+            :label="'Система локального позиционирования'"
+            :system="[
+              'Отслеживать текущее местоположение персонала на плане объекта',
+              'Отслеживать сигнал от метки при нажатии тревожной кнопки',
+              'Контролировать сон на рабочем месте или полную неподвижность сотрудника с меткой',
+              'Определять падение',
+              'Строить отчеты по маршрутам за любой период',
+            ]"
+            :chacharacters="[
+              'Точность до 15 см',
+              'Автономность до 7 дней',
+              'Возможность питания от сторонних источников',
+            ]"
+          />
+          <div class="additionalContainer">
+            <Description
+              :type="'локального'"
+              :text="'Определения местоположения с помощью тегов и точек доступа, фиксирующих присутствие тега'"
+            />
+            <advantages :type="true" :text="'Использование в помещениях'" />
+            <advantages :type="true" :text="'Точность'" />
+            <advantages
+              :type="true"
+              :text="'Использование на небольших открытых пространствахность'"
+            />
+            <advantages :type="false" :text="'Автономность'" />
+          </div>
+        </swiper-slide>
       </swiper>
+
+      <!-- <div class="chacharacters">
+        <p>Характеристики систем позиционирования</p>
+        <div class="containers">
+          
+
+          <Characters
+            :label="'Система глобального позиционирования'"
+            :system="[
+              'Отслеживать текущее местоположение персонала на карте',
+              'Отслеживать сигнал от метки при нажатии тревожной кнопки',
+              'Контролировать сон на рабочем месте или полную неподвижность сотрудника с меткой',
+              'Определение падения',
+              'Строить отчеты по маршрутам за любой период',
+            ]"
+            :chacharacters="[
+              'Точность 5-12 метров',
+              'Автономность до 7 дней',
+              'Возможность питания от сторонних источников питания',
+            ]"
+          />
+
+          <Characters
+            :label="'Система локального позиционирования'"
+            :system="[
+              'Отслеживать текущее местоположение персонала на плане объекта',
+              'Отслеживать сигнал от метки при нажатии тревожной кнопки',
+              'Контролировать сон на рабочем месте или полную неподвижность сотрудника с меткой',
+              'Определять падение',
+              'Строить отчеты по маршрутам за любой период',
+            ]"
+            :chacharacters="[
+              'Точность до 15 см',
+              'Автономность до 7 дней',
+              'Возможность питания от сторонних источников',
+            ]"
+          />
+        </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -38,15 +172,23 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Mousewheel, Pagination } from "swiper";
+import Characters from "@/components/slp/characters.vue";
+import Description from "@/components/slp/descripition.vue";
+import Advantages from "@/components/slp/advantages.vue";
 
 export default {
   name: "SLPZone",
   components: {
     Swiper,
     SwiperSlide,
+    Characters,
+    Description,
+    Advantages,
   },
   data() {
     return {
+      nameBlock: ["зонального", "глобального", "локального"],
+      activeIndex: 0,
       oneImg: "deactivate",
       twoImg: "deactivate",
       threeImg: "deactivate",
@@ -63,6 +205,13 @@ export default {
       this.twoImg = "animate__animated animate__fadeInUp animate__slow";
       this.threeImg = "animate__animated animate__fadeInUp animate__slower";
     },
+    changeBlock(val) {
+      this.activeIndex = val.activeIndex;
+    },
+  },
+  mounted() {
+    const swiper = document.querySelector(".SLPSwiper").swiper;
+    swiper.on("slideChange", this.changeBlock);
   },
 };
 </script>
@@ -90,6 +239,16 @@ export default {
   .swiperEl {
     background-color: #fff;
     border-radius: 50px;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+
+    flex-direction: row;
+
+    .additionalContainer {
+      margin-top: 70px;
+    }
   }
 }
 

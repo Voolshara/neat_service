@@ -35,9 +35,10 @@ export default {
   display: flex;
   flex-direction: column;
   width: 350px;
-  border: 3px dashed rgba(227, 6, 19, 0.15);
+  border: 4px dashed rgba(227, 6, 19, 0.15);
   border-radius: 30px;
   padding: 15px;
+  margin-top: 50px;
 
   .name {
     margin: 0;
