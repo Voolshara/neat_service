@@ -22,28 +22,86 @@
             сантиметров.
           </p>
         </div>
+
         <div
           class="scheme"
           v-animate-onscroll="{ down: 'animated fadeInRight' }"
           data-animate-onscroll-offset="-200"
-        ></div>
+        >
+          <div class="blockDesc">
+            <div class="blockName">
+              <p class="highlight">Уменьшение травматизма</p>
+            </div>
+            <ul>
+              <li>Контроль перемещения персонала</li>
+              <li>
+                Быстрый поиск пострадавших сотрудников и оказание первой помощи
+              </li>
+              <li>Предотвращения аварийных ситуаций с транспортом</li>
+            </ul>
+          </div>
+
+          <div class="blockDesc">
+            <div class="blockName">
+              <p class="highlight">Контроль подрядчиков</p>
+            </div>
+            <ul>
+              <li>Контроль реального времени пребывания на объекте</li>
+              <li>Контроль перемещения</li>
+              <li>Оплата времени реально проведенных работ</li>
+            </ul>
+          </div>
+        </div>
       </div>
 
       <Zone />
+      <Examples />
     </div>
   </div>
 </template>
 
 <script>
+import Examples from "@/components/slp/examples.vue";
 import Zone from "@/components/slp/zone.vue";
 
 export default {
   name: "PositionPage",
-  components: { Zone },
+  components: { Zone, Examples },
 };
 </script>
 
 <style lang="scss" scoped>
+.blockDesc {
+  width: 350px;
+
+  font-weight: 200;
+  font-size: 18px;
+  margin-bottom: 20px;
+  margin-top: 0;
+  margin-left: 60px;
+  padding: 30px;
+
+  border-radius: 20px;
+
+  border: 4px dashed rgba(227, 6, 19, 0.1);
+
+  .highlight {
+    margin: 0;
+    width: 75%;
+    margin: 5px 0 5px 0;
+    padding-left: 5px;
+    background-color: rgba(227, 6, 19, 0.1);
+  }
+
+  .blockName {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 28px;
+
+    width: 300px;
+  }
+}
 .chacharacters {
   display: flex;
   flex-direction: column;
@@ -111,6 +169,9 @@ export default {
     // background-color: rgba(227, 6, 19, 0.05);
     border-radius: 40px;
     width: 40vw;
+
+    display: flex;
+    flex-direction: row;
 
     .one {
       position: relative;
@@ -190,5 +251,6 @@ export default {
 
   // background-color: #f2f2f2;
   background-color: #fff;
+  margin-bottom: 200px;
 }
 </style>
