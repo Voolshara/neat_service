@@ -26,7 +26,7 @@
       </div>
     </div>
     <HowWork />
-    <Factory />
+    <RealIOT />
     <Integretion />
     <Iotprojects />
   </div>
@@ -37,9 +37,9 @@ import HowWork from "@/components/iotpage/howWork.vue";
 import Integretion from "@/components/iotpage/integretion.vue";
 import Iotprojects from "@/components/iotpage/iotprojects.vue";
 import particlesbg from "@/components/iotpage/particlesbg.vue";
-import Factory from "@/components/iotpage/RealIOT/factory.vue";
+import RealIOT from "@/components/iotpage/RealIOT/real_project.vue";
 export default {
-  components: { particlesbg, HowWork, Factory, Integretion, Iotprojects },
+  components: { particlesbg, HowWork, RealIOT, Integretion, Iotprojects },
   name: "IOTPage",
   data() {
     return {};
