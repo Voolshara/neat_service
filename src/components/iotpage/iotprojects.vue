@@ -143,10 +143,29 @@ export default {
     margin-bottom: 150px;
   }
 }
+
 .iotContainer {
   background-color: #000;
   color: #fff;
   position: relative;
+}
+
+@media screen and (max-width: 700px) {
+  .projectContainer {
+    width: 300px;
+
+    .projectLabel {
+      font-size: 35px;
+      margin-bottom: 30px;
+      width: 300px;
+    }
+  }
+
+  .iotContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .iotbackground {
