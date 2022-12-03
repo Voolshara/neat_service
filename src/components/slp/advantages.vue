@@ -37,4 +37,10 @@ export default {
     width: 400px;
   }
 }
+
+@media screen and (max-width: 700px) {
+  .advantage {
+    width: 300px;
+  }
+}
 </style>

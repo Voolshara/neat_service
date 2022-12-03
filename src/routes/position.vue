@@ -1,7 +1,21 @@
 <template>
   <div class="SLP">
     <div class="mainBlock">
-      <img class="backImg" src="@/assets/slp/mainblock.png" alt="" />
+      <!-- <img
+        v-if="isMobile()"
+        class="backImg"
+        src="@/assets/slp/background2.png"
+        alt=""
+      /> -->
+      <Particles
+        class="backImg"
+        id="particlesbg"
+        :particlesInit="particlesInit"
+        :particlesLoaded="particlesLoaded"
+        :options="options"
+      />
+
+      <!-- <img v-else class="backImg" src="@/assets/slp/mainblock.png" alt="" /> -->
       <div class="text animate__animated animate__fadeInRight">
         <p>Отслеживать персонал – наш конёк</p>
       </div>
@@ -30,7 +44,7 @@
         >
           <div class="blockDesc">
             <div class="blockName">
-              <p class="highlight">Уменьшение травматизма</p>
+              <div class="highlightBlock">Уменьшение травматизма</div>
             </div>
             <ul>
               <li>Контроль перемещения персонала</li>
@@ -41,9 +55,9 @@
             </ul>
           </div>
 
-          <div class="blockDesc">
+          <div class="blockDesc additionalMargin">
             <div class="blockName">
-              <p class="highlight">Контроль подрядчиков</p>
+              <p class="highlightBlock">Контроль подрядчиков</p>
             </div>
             <ul>
               <li>Контроль реального времени пребывания на объекте</li>
@@ -64,33 +78,149 @@
 import Examples from "@/components/slp/examples.vue";
 import Zone from "@/components/slp/zone.vue";
 
+import { loadFull } from "tsparticles";
+import { loadPolygonPath } from "tsparticles-path-polygon";
+
 export default {
   name: "PositionPage",
   components: { Zone, Examples },
+  data() {
+    return {
+      options: {
+        background: {
+          color: "#000",
+        },
+        fullScreen: {
+          enable: false,
+          zIndex: 2,
+        },
+        fps_limit: 60,
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onclick: { enable: true, mode: "push" },
+            onhover: {
+              enable: true,
+              mode: "attract",
+              parallax: { enable: false, force: 60, smooth: 10 },
+            },
+            resize: true,
+          },
+          modes: {
+            push: { quantity: 4 },
+            attract: { distance: 200, duration: 0.4, factor: 5 },
+          },
+        },
+        particles: {
+          color: { value: "#ffffff" },
+          line_linked: {
+            color: "#ffffff",
+            distance: 150,
+            enable: true,
+            opacity: 0.4,
+            width: 1,
+          },
+          move: {
+            attract: { enable: false, rotateX: 600, rotateY: 1200 },
+            bounce: false,
+            direction: "none",
+            enable: true,
+            out_mode: "out",
+            random: false,
+            speed: 2,
+            straight: false,
+          },
+          number: { density: { enable: true, value_area: 800 }, value: 80 },
+          opacity: {
+            anim: { enable: false, opacity_min: 0.1, speed: 1, sync: false },
+            random: false,
+            value: 0.5,
+          },
+          shape: {
+            character: {
+              fill: false,
+              font: "Verdana",
+              style: "",
+              value: "*",
+              weight: "400",
+            },
+            polygon: { nb_sides: 5 },
+            stroke: { color: "#000000", width: 0 },
+            type: "circle",
+          },
+          size: {
+            anim: { enable: false, size_min: 0.1, speed: 40, sync: false },
+            random: true,
+            value: 5,
+          },
+        },
+        polygon: {
+          draw: { enable: false, lineColor: "#ffffff", lineWidth: 0.5 },
+          move: { radius: 10 },
+          scale: 1,
+          type: "none",
+          url: "",
+        },
+        retina_detect: true,
+      },
+    };
+  },
+  setup() {
+    const particlesInit = async (engine) => {
+      await loadFull(engine);
+      await loadPolygonPath(engine);
+    };
+
+    const particlesLoaded = async () => {
+      // console.log("Particles container loaded", container);
+    };
+
+    return { particlesLoaded, particlesInit };
+  },
+  methods: {
+    isMobile() {
+      if (
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        )
+      )
+        return true;
+      return false;
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
+.additionalMargin {
+  margin-left: 2vw;
+}
 .blockDesc {
-  width: 350px;
-
+  width: 18vw;
+  max-width: 350px;
   font-weight: 200;
   font-size: 18px;
   margin-bottom: 20px;
   margin-top: 0;
-  margin-left: 60px;
+
   padding: 30px;
 
   border-radius: 20px;
 
   border: 4px dashed rgba(227, 6, 19, 0.1);
 
-  .highlight {
+  .highlightBlock {
     margin: 0;
-    width: 75%;
+    width: 77%;
     margin: 5px 0 5px 0;
     padding-left: 5px;
     background-color: rgba(227, 6, 19, 0.1);
+  }
+
+  @media screen and (max-width: 700px) {
+    .highlightBlock {
+      width: 50px;
+    }
   }
 
   .blockName {
@@ -100,6 +230,12 @@ export default {
     font-size: 28px;
 
     width: 300px;
+  }
+
+  @media screen and (max-width: 700px) {
+    .blockName {
+      width: 100%;
+    }
   }
 }
 .chacharacters {
@@ -139,27 +275,39 @@ export default {
   justify-content: space-evenly;
   margin-top: 100px;
 
-  width: 75vw;
+  width: 85vw;
 
   .textSLP {
     .name {
-      font-size: 40px;
+      font-size: 2vw;
       padding-left: 20px;
       padding-top: 10px;
       padding-bottom: 10px;
       border-radius: 15px;
       background-color: rgba(227, 6, 19, 0.15);
-      width: 500px;
+      width: 30vw;
+      max-width: 500px;
     }
 
     .desc {
       padding-left: 20px;
-      width: 450px;
-      font-size: 20px;
+      width: 28vw;
+      max-width: 450px;
+      font-size: 1.3vw;
       font-weight: 200;
     }
 
-    display: flex;
+    @media screen and (max-width: 700px) {
+      .name {
+        width: 60vw;
+        font-size: 2.4vh;
+      }
+
+      .desc {
+        width: 58vw;
+        font-size: 1.8vh;
+      }
+    }
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
@@ -172,20 +320,37 @@ export default {
 
     display: flex;
     flex-direction: row;
+  }
+}
 
-    .one {
-      position: relative;
-      left: 3vw;
+@media screen and (max-width: 700px) {
+  .WhatisSLP {
+    flex-direction: column;
+    margin-top: 50px;
+
+    .scheme {
+      flex-direction: row;
+      justify-content: center;
+      width: 100vw;
     }
+    .blockDesc {
+      width: 34vw;
+      font-size: 13px;
+      padding: 10px;
 
-    .two {
-      position: relative;
-      left: 13vw;
-    }
+      .highlightBlock {
+        width: 130px;
+        font-size: 18px;
+      }
 
-    .three {
-      position: relative;
-      left: 23vw;
+      ul {
+        padding: 0;
+        padding-left: 20px;
+      }
+
+      li {
+        margin-bottom: 10px;
+      }
     }
   }
 }
@@ -234,11 +399,29 @@ export default {
       margin: 0;
 
       font-size: 35px;
-      width: 500px;
+      width: 30vw;
       text-align: right;
 
       margin-right: 40px;
       font-weight: 600;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .text {
+      border: 70vw solid transparent;
+
+      border-bottom: 85vh solid rgba($color: #fff, $alpha: 0.9);
+      border-right: 100px;
+      border-top: 0;
+
+      p {
+        top: 65vh;
+        font-size: 22px;
+        margin-right: 40px;
+        width: 50vw;
+        text-align: left;
+      }
     }
   }
 }
@@ -252,5 +435,11 @@ export default {
   // background-color: #f2f2f2;
   background-color: #fff;
   margin-bottom: 200px;
+}
+
+@media screen and (max-width: 700px) {
+  .SLP {
+    margin-bottom: 30px;
+  }
 }
 </style>

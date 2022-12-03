@@ -56,4 +56,12 @@ export default {
     }
   }
 }
+
+@media screen and (max-width: 700px) {
+  .containerSLP {
+    width: 300px;
+
+    margin-top: 30px;
+  }
+}
 </style>

@@ -50,6 +50,7 @@ export default {
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-left: 20px;
 
     img {
       height: 64px;
@@ -57,10 +58,23 @@ export default {
 
     p {
       margin: 0;
-      width: 300px;
+      // width: 17vw;
+      max-width: 300px;
       margin-left: 20px;
-      font-size: 24px;
+      font-size: 20px;
     }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .gridAchiv {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .oneAchiv {
+    margin-bottom: 20px;
   }
 }
 
@@ -73,6 +87,13 @@ export default {
   .moreMotto {
     font-size: 27px;
     width: 800px;
+  }
+
+  @media screen and (max-width: 900px) {
+    .moreMotto {
+      font-size: 20px;
+      width: 80vw;
+    }
   }
 
   .footerAbout {
@@ -88,7 +109,7 @@ export default {
 
   background-color: black;
   position: relative;
-  z-index: 999;
+  z-index: 9;
 
   color: white;
   font-weight: 200;

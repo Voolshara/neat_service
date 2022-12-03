@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <p class="exampleName">Сферы применения</p>
+    <div class="exampleName">Сферы применения</div>
 
     <div class="examplePart">
       <div class="dataContainer">
@@ -95,6 +95,14 @@ export default {
     flex-direction: row;
   }
 
+  @media screen and (max-width: 700px) {
+    .dataContainer {
+      margin-bottom: 60px;
+
+      align-items: center;
+    }
+  }
+
   .left {
     border-left: 4px solid rgba(227, 6, 19, 0.15);
     margin-left: 20px;
@@ -129,18 +137,47 @@ export default {
     }
   }
 
+  @media screen and (max-width: 700px) {
+    .data {
+      width: 200px;
+
+      .name {
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      .exampleBlock {
+        font-size: 16px;
+      }
+    }
+  }
+
   .exampleImg {
-    height: 250px;
-    width: 350px;
+    // height: 250px;
+    width: 20vw;
+  }
+
+  @media screen and (max-width: 700px) {
+    .exampleImg {
+      // height: 250px;
+      width: 100px;
+      height: 90px;
+    }
   }
 }
 
 .part2 {
   margin-top: 100px;
 }
+@media screen and (max-width: 700px) {
+  .part2 {
+    margin-top: 0px;
+  }
+}
 .exampleName {
   font-size: 40px;
-  margin-bottom: 150px;
+  margin-bottom: 10vh;
+  text-align: center;
 }
 
 .container {
@@ -149,5 +186,11 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+@media screen and (max-width: 1200px) {
+  .examplePart {
+    flex-direction: column;
+  }
 }
 </style>

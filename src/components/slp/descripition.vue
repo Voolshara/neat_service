@@ -50,4 +50,14 @@ export default {
     width: 300px;
   }
 }
+
+@media screen and (max-width: 700px) {
+  .blockDesc {
+    width: 270px;
+    border: none;
+
+    .blockName {
+    }
+  }
+}
 </style>

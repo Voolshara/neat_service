@@ -175,12 +175,13 @@ export default {
   width: 100%;
   height: 100%;
   color: white;
+  background-color: black;
 
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
 
-  margin-top: 110px;
+  padding-top: 110px;
 }
 </style>

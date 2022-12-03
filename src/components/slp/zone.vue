@@ -7,7 +7,7 @@
           <div class="highlightZone">{{ nameBlock[activeIndex] }}</div>
           позиционирования
         </div>
-        <div class="imgBlock">
+        <div v-if="!isMobile()" class="imgBlock">
           <img :class="oneImg" src="@/assets/slp/radar.png" alt="" />
           <img :class="twoImg" src="@/assets/slp/radar.png" alt="" />
           <img :class="threeImg" src="@/assets/slp/radar.png" alt="" />
@@ -18,11 +18,17 @@
         class="SLPSwiper"
         :spaceBetween="300"
         :speed="1000"
-        :direction="'vertical'"
+        :direction="direction"
         :slidesPerView="1"
         :mousewheel="true"
         :modules="modules"
       >
+        <div
+          v-if="isMobile() && isNotMoved"
+          class="Arrow animate__animated animate__pulse animate__infinite"
+        >
+          >
+        </div>
         <!-- _________________________________________________1_______________________________ -->
 
         <swiper-slide class="swiperEl"
@@ -192,6 +198,8 @@ export default {
       oneImg: "deactivate",
       twoImg: "deactivate",
       threeImg: "deactivate",
+      direction: "vertical",
+      isNotMoved: true,
     };
   },
   setup() {
@@ -207,7 +215,21 @@ export default {
     },
     changeBlock(val) {
       this.activeIndex = val.activeIndex;
+      this.isNotMoved = false;
     },
+    isMobile() {
+      if (
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        )
+      )
+        return true;
+      return false;
+    },
+  },
+
+  beforeMount() {
+    if (this.isMobile()) this.direction = "horizontal";
   },
   mounted() {
     const swiper = document.querySelector(".SLPSwiper").swiper;
@@ -249,6 +271,40 @@ export default {
     .additionalContainer {
       margin-top: 70px;
     }
+
+    @media screen and (max-width: 700px) {
+      .additionalContainer {
+        margin-top: 0px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .swiperEl {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .SLPSwiper {
+    height: 100%;
+    position: relative;
+    z-index: 1;
+  }
+
+  .Arrow {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    right: 2px;
+    font-size: 100px;
+    line-height: 200px;
+    height: 200px;
+
+    color: rgba(227, 6, 19, 0.3);
   }
 }
 
@@ -278,6 +334,13 @@ export default {
     }
   }
 
+  @media screen and (max-width: 700px) {
+    .text {
+      width: 100%;
+      flex-direction: column;
+    }
+  }
+
   img {
     width: 40px;
     margin-left: 20px;
@@ -290,12 +353,27 @@ export default {
     margin-left: 20px;
   }
 }
+
+@media screen and (max-width: 700px) {
+  .label {
+    height: 60px;
+  }
+}
+
 .container {
   .main-block {
     width: 80vw;
 
     margin-top: 40px;
     margin-bottom: 40px;
+  }
+
+  @media screen and (max-width: 700px) {
+    .main-block {
+      width: 90vw;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
   }
 
   display: flex;
