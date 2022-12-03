@@ -127,5 +127,37 @@ body::-webkit-scrollbar {
       font-size: 14px;
     }
   }
+
+  @media screen and (max-width: 700px) {
+    .DescBox {
+      .MainLabel {
+        p {
+          font-size: 40px;
+        }
+
+        font-size: 20px;
+      }
+
+      .IotContainer {
+        flex-direction: column;
+        width: 300px;
+      }
+
+      .IotDesc {
+        width: 300px;
+        font-size: 16px;
+      }
+
+      .cleverDesc {
+        display: none;
+        width: 300px;
+        font-size: 13px;
+        font-weight: 200;
+      }
+
+      width: 280px;
+      background-color: rgba($color: #000000, $alpha: 0.9);
+    }
+  }
 }
 </style>

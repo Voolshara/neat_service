@@ -13,7 +13,24 @@
       </div>
     </div>
 
-    <div class="circlesblock">
+    <div v-if="isMobile()" class="circlesblock">
+      <div class="circle">1</div>
+      <div class="text">
+        Датчики устанавливаются за пару дней, никаких проводов
+      </div>
+      <div class="circle">2</div>
+      <div class="text">
+        Программное обеспечение настраивается нашими силами, обучаем ваших
+        специалистов
+      </div>
+      <div class="circle">3</div>
+      <div class="text">
+        Открытое, хорошо документированное API позволяет быстро сделать любые
+        интеграции в ваши IT-системы
+      </div>
+    </div>
+
+    <div v-else class="circlesblock">
       <div class="circle">1</div>
       <div class="circle">2</div>
       <div class="circle">3</div>
@@ -35,6 +52,17 @@
 <script>
 export default {
   name: "IotWithPosition",
+  methods: {
+    isMobile() {
+      if (
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        )
+      )
+        return true;
+      return false;
+    },
+  },
 };
 </script>
 
@@ -42,7 +70,8 @@ export default {
 .circlesblock {
   display: grid;
   grid-template-rows: 350px 50px;
-  grid-template-columns: 420px 420px 420px;
+  gap: 50px;
+  grid-template-columns: auto auto auto;
 
   .circle {
     width: 300px;
@@ -68,18 +97,39 @@ export default {
     text-align: center;
     font-size: 20px;
   }
+
+  @media screen and (max-width: 700px) {
+    .circle {
+      width: 100px;
+      height: 100px;
+      font-size: 30px;
+    }
+
+    .text {
+      width: 200px;
+      font-size: 16px;
+      text-align: left;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .circlesblock {
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+    gap: 30px;
+  }
 }
 
 .container {
   .label {
     margin-top: 80px;
     color: black;
-    align-self: center;
-    margin-left: 300px;
+    align-self: flex-start;
+    padding-left: 300px;
     font-size: 40px;
     font-weight: 800;
     margin-bottom: 80px;
-    width: 1560px;
 
     .label-2 {
       margin-top: 10px;
@@ -89,6 +139,19 @@ export default {
       font-weight: 200;
       display: flex;
       flex-direction: row;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .label {
+      padding-left: 0;
+      align-self: center;
+      width: 300px;
+
+      .label-2 {
+        width: 300px;
+        flex-direction: column;
+      }
     }
   }
 

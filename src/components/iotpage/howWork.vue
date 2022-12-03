@@ -12,7 +12,8 @@
         v-animate-onscroll="{ down: 'animated fadeInRight' }"
         class="DescScheme"
       >
-        <p class="header">Основные компоненты:</p>
+        <p v-if="isMobile()" class="header">Основные компоненты IOT:</p>
+        <p v-else class="header">Основные компоненты:</p>
         <div class="DescEl">
           <p class="Elementlabel">1) БАЗОВАЯ СТАНЦИЯ</p>
           Обслуживает > 100 000 датчиков в радиусе до 10 км в городе и до 50 км
@@ -40,6 +41,23 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: "IOThowWOrk",
+  methods: {
+    isMobile() {
+      if (
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        )
+      )
+        return true;
+      return false;
+    },
+  },
+};
+</script>
+
 <style lang="scss" scoped>
 .label {
   align-self: flex-start;
@@ -47,6 +65,18 @@
   margin-top: 50px;
   margin-left: 200px;
   margin-bottom: 100px;
+}
+
+@media screen and (max-width: 700px) {
+  .label {
+    // align-self: center;
+    // width: 300px;
+    // margin-left: 0;
+    // text-align: center;
+    // font-size: 40px;
+    // margin-bottom: 20px;
+    display: none;
+  }
 }
 
 .DescEl {
@@ -73,8 +103,36 @@
   flex-direction: row;
 }
 
+@media screen and (max-width: 700px) {
+  .IotScheme {
+    flex-direction: column-reverse;
+    align-items: center;
+    .DescScheme {
+      width: 300px;
+      margin-top: 50px;
+
+      .header {
+        font-size: 30px;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
 .ImgScheme {
   width: 40vw;
+}
+
+@media screen and (max-width: 700px) {
+  .ImgScheme {
+    margin-top: 40px;
+    width: 80vw;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .ImgScheme:hover {
+    transform: scale(1.15);
+  }
 }
 
 .howWork {
@@ -83,5 +141,11 @@
   justify-content: center;
   flex-direction: column;
   margin-bottom: 100px;
+}
+
+@media screen and (max-width: 700px) {
+  .howWork {
+    margin-bottom: 40px;
+  }
 }
 </style>

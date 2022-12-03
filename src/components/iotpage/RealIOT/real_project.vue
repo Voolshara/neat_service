@@ -78,4 +78,10 @@ export default {
     }
   }
 }
+
+@media screen and (max-width: 700px) {
+  .FactoryContainer {
+    margin-top: 40px;
+  }
+}
 </style>
