@@ -153,6 +153,7 @@ export default {
 @media screen and (max-width: 700px) {
   .projectContainer {
     width: 300px;
+    padding-bottom: 20px;
 
     .projectLabel {
       font-size: 35px;
@@ -170,7 +171,7 @@ export default {
 
 .iotbackground {
   width: 100%;
-  height: 2300px;
+  height: 100%;
   position: absolute;
   z-index: 1;
 }

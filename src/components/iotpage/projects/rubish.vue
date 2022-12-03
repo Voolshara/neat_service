@@ -154,7 +154,7 @@ export default {
         this.hoverClass =
           "animate__animated animate__fadeOutUp animate__faster";
         await new Promise((resolve) => {
-          setTimeout(resolve, 800);
+          setTimeout(resolve, 300);
         });
         this.isclicked = false;
       } else {
@@ -311,18 +311,26 @@ export default {
   .block {
     flex-direction: column;
     align-self: center;
+    margin-bottom: 40px;
   }
 
   .container {
     width: 300px;
     margin-left: 0;
-    // border-radius: px;
     padding-right: 10px;
     padding-bottom: 95px;
 
     padding-top: 20px;
 
     height: 325px;
+
+    .name {
+      width: 80%;
+    }
+
+    .desc {
+      width: 80%;
+    }
 
     img {
       height: 70px;
