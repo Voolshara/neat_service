@@ -4,10 +4,7 @@
       <img class="prg-img" src="@/assets/IotPage/agronomy.png" alt="" />
       <div class="textPrj">
         <div class="name">Готовые решения для сельского хозяйства</div>
-        <div class="desc">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-          sit ut cum doloremque eaque et obcaecati ducimus veritatis?
-        </div>
+        <div class="desc">Мониторинг большого колличества параметров</div>
       </div>
     </div>
     <div v-show="isclicked" :class="'additionalBlock ' + hoverClass">

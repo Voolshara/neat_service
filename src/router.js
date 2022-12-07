@@ -19,7 +19,7 @@ const routes = [
   },
   {
     path: "/about",
-    component: () => import("@/components/mainpage/contactUs.vue"),
+    component: () => import("@/routes/about.vue"),
   },
 ];
 

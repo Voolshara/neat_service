@@ -2,7 +2,7 @@
   <div class="card">
     <img class="cardImg" :src="imgLink" alt="No Img" />
     <p class="cardLabel">{{ label }}</p>
-    <p class="cardDesc">{{ desc }}</p>
+    <!-- <p class="cardDesc">{{ desc }}</p> -->
   </div>
 </template>
 

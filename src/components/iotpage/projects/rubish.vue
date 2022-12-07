@@ -5,8 +5,7 @@
       <div class="textPrj">
         <div class="name">Мониторинг мусорных контейнеров</div>
         <div class="desc">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium,
-          officia.
+          Датчик контролирует уровень заполнености мусорных баков
         </div>
       </div>
     </div>

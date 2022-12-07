@@ -1,9 +1,5 @@
 <template>
-  <div
-    class="container"
-    v-animate-onscroll="{ down: 'animated fadeInLeft' }"
-    data-animate-onscroll-offset="100"
-  >
+  <div class="container" v-animate-onscroll="{ down: 'animated fadeInLeft' }">
     <div class="label">
       Внедрить очень просто
       <div class="label-2">

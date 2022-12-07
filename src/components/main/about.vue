@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <div class="about animate__animated animate__fadeInLeft">
     <div class="mainfooter">
       <p class="motto">Наша миссия – внедрить инновации во все сферы жизни</p>
       <p class="moreMotto">
@@ -29,7 +29,7 @@
         </div>
       </div>
     </div>
-  </footer>
+  </div>
 </template>
 
 <script>
@@ -78,7 +78,7 @@ export default {
   }
 }
 
-.footer {
+.about {
   .motto {
     font-weight: 400;
     font-size: 40px;
@@ -102,8 +102,7 @@ export default {
   }
 
   .mainfooter {
-    border-top: 1px dashed white;
-    margin-top: 20px;
+    margin-top: 80px;
     width: 90%;
   }
 
@@ -117,5 +116,12 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .about {
+    margin-top: 300px;
+    margin-bottom: 300px;
+  }
 }
 </style>

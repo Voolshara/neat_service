@@ -28,8 +28,8 @@
 </template>
 
 <script>
-import MainVideo from "@/components/mainpage/videobox.vue";
-import AboutBlock from "@/components/mainpage/aboutblock.vue";
+import MainVideo from "@/components/devpage/videobox.vue";
+import AboutBlock from "@/components/devpage/aboutblock.vue";
 // import Description from "@/components/mainpage/description.vue";
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
@@ -39,12 +39,12 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Mousewheel, Pagination } from "swiper";
-import Competitions from "@/components/mainpage/competitions.vue";
-import Projects from "@/components/mainpage/projects.vue";
-import ContactUs from "@/components/mainpage/contactUs.vue";
+import Competitions from "@/components/devpage/competitions.vue";
+import Projects from "@/components/devpage/projects.vue";
+import ContactUs from "@/components/devpage/contactUs.vue";
 
 export default {
-  name: "MainPage",
+  name: "DevPage",
   data() {
     return {
       active_index: 0,

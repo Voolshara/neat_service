@@ -4,14 +4,12 @@
     <div class="IotScheme">
       <img
         v-animate-onscroll="{ down: 'animated fadeInLeft' }"
-        data-animate-onscroll-offset="200"
         class="ImgScheme"
         src="@/assets/iot/iot.png"
         alt=""
       />
       <div
         v-animate-onscroll="{ down: 'animated fadeInRight' }"
-        data-animate-onscroll-offset="200"
         class="DescScheme"
       >
         <p v-if="isMobile()" class="header">Основные компоненты IOT:</p>
