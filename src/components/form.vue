@@ -45,7 +45,7 @@ export default {
   },
   methods: {
     send() {
-      fetch("http://localhost:5600/send_contact", {
+      fetch("http://engneat.tungulov.space/send_contact", {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
         mode: "cors", // no-cors, *cors, same-origin
         cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
