@@ -71,19 +71,23 @@
       <Zone />
       <Examples />
     </div>
+    <div class="form">
+      <formContainer />
+    </div>
   </div>
 </template>
 
 <script>
 import Examples from "@/components/slp/examples.vue";
 import Zone from "@/components/slp/zone.vue";
+import formContainer from "@/components/form.vue";
 
 import { loadFull } from "tsparticles";
 import { loadPolygonPath } from "tsparticles-path-polygon";
 
 export default {
   name: "PositionPage",
-  components: { Zone, Examples },
+  components: { Zone, Examples, formContainer },
   data() {
     return {
       options: {
@@ -426,6 +430,11 @@ export default {
   }
 }
 
+.form {
+  margin-top: 100px;
+  width: 100%;
+}
+
 .SLP {
   display: flex;
   flex-direction: column;
@@ -434,12 +443,15 @@ export default {
 
   // background-color: #f2f2f2;
   background-color: #fff;
-  margin-bottom: 200px;
 }
 
 @media screen and (max-width: 700px) {
   .SLP {
     margin-bottom: 30px;
+  }
+
+  .form {
+    margin-top: 0px;
   }
 }
 </style>

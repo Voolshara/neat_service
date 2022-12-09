@@ -18,7 +18,9 @@
         <p class="first">Миссия нашей команды - воплощать идеи в прототип</p>
         <p class="second">Разработка устройств под ваши нужды</p>
         <!-- <p class="third">Полный цикл разработки</p> -->
-        <button class="button-reply">Оставить заявку</button>
+        <button v-on:click="$emit('press')" class="button-reply">
+          Оставить заявку
+        </button>
       </div>
     </div>
     <div v-else class="NameBlock">

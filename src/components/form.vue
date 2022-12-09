@@ -127,6 +127,12 @@ export default {
     padding: 5px 9px 5px 30px;
   }
 
+  .formInput:focus {
+    border: 3px solid white;
+    color: white;
+    background-color: black;
+  }
+
   .textarea {
     height: 200px;
     line-height: 30px;
@@ -137,6 +143,16 @@ export default {
 .FormHeader {
   font-size: 40px;
   margin-bottom: 100px;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  background-color: black;
 }
 
 @media screen and (max-width: 768px) {
@@ -154,15 +170,30 @@ export default {
 
     left: 0;
 
-    gap: 10px;
+    gap: 5px;
     width: 335px;
 
     .formInput {
       width: 300px;
+      font-size: 22px;
     }
     .label {
       align-self: flex-start;
       margin: 10px;
+      .formContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        color: white;
+        background-color: black;
+      }
+      font-size: 20px;
+    }
+
+    .textarea {
+      height: 100px;
     }
 
     .btn {
@@ -175,15 +206,9 @@ export default {
   .FormHeader {
     margin-bottom: 10px;
   }
-}
 
-.formContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  color: white;
-  background-color: black;
+  .formContainer {
+    padding-bottom: 100px;
+  }
 }
 </style>

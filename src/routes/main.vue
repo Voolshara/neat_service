@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <about />
-    <formContainer style="margin-bottom: 150px" />
     <command />
+    <formContainer style="margin-top: 80px" />
   </div>
 </template>
 

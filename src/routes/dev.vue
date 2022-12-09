@@ -15,7 +15,7 @@
     :modules="modules"
     class="mySwiper"
   >
-    <swiper-slide><MainVideo /></swiper-slide>
+    <swiper-slide><MainVideo @press="press_button" /></swiper-slide>
     <!-- <swiper-slide><Description ref="SecondMenu" /></swiper-slide> -->
 
     <swiper-slide>
@@ -23,7 +23,10 @@
     </swiper-slide>
     <swiper-slide><Competitions ref="FourthMenu" /></swiper-slide>
     <swiper-slide><Projects ref="FifthMenu" /></swiper-slide>
-    <swiper-slide><ContactUs ref="SixMenu" /></swiper-slide>
+    <swiper-slide
+      ><formContainer ref="SixhMenu" style="margin-top: 100px"
+    /></swiper-slide>
+    <swiper-slide><ContactUs ref="SevenMenu" /></swiper-slide>
   </swiper>
 </template>
 
@@ -42,6 +45,7 @@ import { Mousewheel, Pagination } from "swiper";
 import Competitions from "@/components/devpage/competitions.vue";
 import Projects from "@/components/devpage/projects.vue";
 import ContactUs from "@/components/devpage/contactUs.vue";
+import formContainer from "@/components/form.vue";
 
 export default {
   name: "DevPage",
@@ -59,6 +63,7 @@ export default {
     Competitions,
     Projects,
     ContactUs,
+    formContainer,
   },
   setup() {
     return {
@@ -66,6 +71,10 @@ export default {
     };
   },
   methods: {
+    press_button() {
+      const swiper = document.querySelector(".swiper").swiper;
+      swiper.slideTo(4, 1000);
+    },
     change_menu(val) {
       let ActiveIndex = val.activeIndex;
       switch (ActiveIndex) {
@@ -89,7 +98,8 @@ export default {
       this.$refs.ThirdMenu.change_dynamic_class(ActiveIndex === 1);
       this.$refs.FourthMenu.change_dynamic_class(ActiveIndex === 2);
       this.$refs.FifthMenu.change_dynamic_class(ActiveIndex === 3);
-      this.$refs.SixMenu.change_dynamic_class(ActiveIndex === 4);
+      // this.$refs.SixMenu.change_dynamic_class(ActiveIndex === 4);
+      this.$refs.SevenMenu.change_dynamic_class(ActiveIndex === 5);
     },
   },
   mounted() {

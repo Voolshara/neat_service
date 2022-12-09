@@ -29,6 +29,7 @@
     <RealIOT />
     <Integretion />
     <Iotprojects />
+    <formContainer />
   </div>
 </template>
 
@@ -38,8 +39,17 @@ import Integretion from "@/components/iotpage/integretion.vue";
 import Iotprojects from "@/components/iotpage/iotprojects.vue";
 import particlesbg from "@/components/iotpage/particlesbg.vue";
 import RealIOT from "@/components/iotpage/RealIOT/real_project.vue";
+import formContainer from "@/components/form.vue";
+
 export default {
-  components: { particlesbg, HowWork, RealIOT, Integretion, Iotprojects },
+  components: {
+    particlesbg,
+    HowWork,
+    RealIOT,
+    Integretion,
+    Iotprojects,
+    formContainer,
+  },
   name: "IOTPage",
   data() {
     return {};

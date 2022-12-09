@@ -20,8 +20,8 @@
       <div class="menu-icon-element-black"></div>
       <div class="menu-icon-element-black"></div>
     </div>
-    <div v-if="isOpenMenu" class="MenuDropDown-container">
-      <AdditionalNav />
+    <div v-if="isOpenMenu" :class="'MenuDropDown-container ' + dynClass">
+      <AdditionalNav @close="openMenu" />
     </div>
   </div>
   <div v-else class="NavBar animate__animated animate__fadeInDown">
@@ -55,6 +55,7 @@ export default {
     return {
       windowHeight: window.innerHeight,
       isOpenMenu: false,
+      dynClass: "",
     };
   },
 
@@ -72,16 +73,19 @@ export default {
     onResize() {
       this.windowHeight = window.innerHeight;
     },
-    openMenu() {
-      this.isOpenMenu = this.isOpenMenu ? false : true;
-      /*if (this.isOpenMenu) {
+    async openMenu() {
+      if (this.isOpenMenu) {
+        this.dynClass = "animate__animated animate__fadeOutRight";
+        await new Promise((resolve) => {
+          setTimeout(resolve, 800);
+        });
         this.isOpenMenu = false;
-        this.$store.commit("SetBlackNav");
       } else {
+        this.dynClass = "animate__animated animate__fadeInRight fast";
         this.isOpenMenu = true;
-        this.$store.commit("SetWhiteNav");
-      }*/
+      }
     },
+
     isMobile() {
       if (
         /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(

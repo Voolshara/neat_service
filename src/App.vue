@@ -16,6 +16,10 @@ export default {
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap");
 
+html {
+  height: 100%;
+}
+
 * {
   font-family: "Montserrat", sans-serif;
 }
