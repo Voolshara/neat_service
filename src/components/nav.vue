@@ -29,7 +29,7 @@
       ><img class="Logo" src="@/assets/logo_full.png" alt="" />
     </router-link>
     <div v-if="this.$store.state.IsColorNavBlack" class="Nav Nav-white">
-      <router-link to="/dev" class="base">Разработка</router-link>
+      <router-link to="/dev" class="base">Разработка устройств</router-link>
       <router-link to="/slp" class="base">Системы позиционирования</router-link>
       <router-link to="/iot" class="base">IoT</router-link>
       <router-link to="/about" class="special">Контакты</router-link>
