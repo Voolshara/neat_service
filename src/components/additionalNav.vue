@@ -3,7 +3,7 @@
     <div class="topSpace"></div>
     <div class="NavContainer">
       <router-link v-on:click="$emit('close')" to="/dev" class="base"
-        >Разработка</router-link
+        >Разработка устройств</router-link
       >
       <router-link v-on:click="$emit('close')" to="/slp" class="base"
         >Системы позиционирования</router-link

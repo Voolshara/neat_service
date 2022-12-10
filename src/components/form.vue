@@ -45,7 +45,7 @@ export default {
   },
   methods: {
     send() {
-      fetch("http://engneat.tungulov.space/send_contact", {
+      fetch("http://185.185.70.175:2700/send_contact", {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
         mode: "cors", // no-cors, *cors, same-origin
         cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
@@ -197,9 +197,8 @@ export default {
     }
 
     .btn {
+      margin-top: 10px;
       left: 0;
-
-      align-self: flex-start;
     }
   }
 
