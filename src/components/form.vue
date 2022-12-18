@@ -5,20 +5,56 @@
       <div class="text animate__animated animate__fadeIn">Заявка оставлена</div>
     </div>
     <div v-else class="form">
-      <p class="label">Имя</p>
+      <div class="label">
+        Имя
+        <div v-if="errorName" class="error animate__animated animate__fadeIn">
+          Пустое поле
+        </div>
+      </div>
+
       <input class="formInput" v-model="form.name" placeholder="Ваше имя" />
 
-      <p class="label">Телефон</p>
+      <div class="label">
+        Телефон
+        <div
+          v-if="errorPhoneOrEmail"
+          class="error animate__animated animate__fadeIn"
+        >
+          Пустое поле
+        </div>
+      </div>
       <input class="formInput" v-model="form.phone" placeholder="Ваш телефон" />
 
-      <p class="label">Почта</p>
+      <div class="label">
+        Почта
+        <div
+          v-if="errorPhoneOrEmail"
+          class="error animate__animated animate__fadeIn"
+        >
+          Пустое поле
+        </div>
+      </div>
       <input
         class="formInput"
         v-model="form.email"
         placeholder="info@neatech.ru"
       />
 
-      <p class="label">Текст вопроса</p>
+      <div class="label">
+        Текст вопроса
+        <div
+          v-if="errorText === 1"
+          class="error animate__animated animate__fadeIn"
+        >
+          Пустое поле
+        </div>
+        <div
+          v-if="errorText === 2"
+          class="error animate__animated animate__fadeIn"
+        >
+          Текст привысил 300 символов
+        </div>
+      </div>
       <textarea
         class="formInput textarea"
         v-model="form.text"
@@ -41,31 +77,56 @@ export default {
         text: "",
       },
       is_send: false,
+      errorName: 0,
+      errorPhoneOrEmail: 0,
+      errorText: 0,
     };
   },
   methods: {
     send() {
-      fetch("http://185.185.70.175:2700/send_contact", {
-        method: "POST", // *GET, POST, PUT, DELETE, etc.
-        mode: "cors", // no-cors, *cors, same-origin
-        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-        credentials: "same-origin", // include, *same-origin, omit
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Private-Network": true,
-        },
-        redirect: "follow", // manual, *follow, error
-        referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-        body: JSON.stringify(this.form), // body data type must match "Content-Type" header
-      })
-        .then((response) => response.json())
-        .then(() => {
-          this.is_send = true;
+      let no_error = true;
+      if (this.form.name === "") {
+        this.errorName = 1;
+        no_error = false;
+      } else this.errorName = 0;
+
+      if (this.form.phone === "" && this.form.email === "") {
+        this.errorPhoneOrEmail = 1;
+        no_error = false;
+      } else this.errorPhoneOrEmail = 0;
+
+      if (this.form.text === "") {
+        this.errorText = 1;
+        no_error = false;
+      } else if (this.form.text.length > 300) {
+        this.errorText = 2;
+        no_error = false;
+      } else this.errorText = 0;
+
+      if (no_error) {
+        console.log("qu");
+        fetch("http://185.185.70.175:2700/send_contact", {
+          method: "POST", // *GET, POST, PUT, DELETE, etc.
+          mode: "cors", // no-cors, *cors, same-origin
+          cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+          credentials: "same-origin", // include, *same-origin, omit
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Private-Network": true,
+          },
+          redirect: "follow", // manual, *follow, error
+          referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+          body: JSON.stringify(this.form), // body data type must match "Content-Type" header
         })
-        .catch((error) => {
-          console.error("Error:", error);
-          return null;
-        });
+          .then((response) => response.json())
+          .then(() => {
+            this.is_send = true;
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            return null;
+          });
+      }
     },
   },
 };
@@ -114,6 +175,13 @@ export default {
 
   .label {
     text-align: right;
+
+    .error {
+      margin-left: 10px;
+      margin-bottom: 1px;
+      font-size: 20px;
+      color: var(--color-red);
+    }
   }
   .formInput {
     border: 3px solid white;
@@ -180,6 +248,14 @@ export default {
     .label {
       align-self: flex-start;
       margin: 10px;
+      text-align: center;
+      width: 100%;
+
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+
       .formContainer {
         display: flex;
         flex-direction: column;
@@ -189,7 +265,15 @@ export default {
         color: white;
         background-color: black;
       }
+
       font-size: 20px;
+    }
+
+    .error {
+      margin-left: 10px;
+      margin-bottom: 1px;
+      font-size: 14px;
+      color: var(--color-red);
     }
 
     .textarea {

@@ -103,7 +103,7 @@ export default {
           {
             id: 1,
             label: "Вспомогательный робот-спелеолог",
-            src: "/img/competitions/system_factory.jpg",
+            src: "/img/competitions/robot_img.png",
             text: "Робот помогает спелеологам получить доступ в труднодоступные места, на борту имеется камера",
             is_active: false,
           },

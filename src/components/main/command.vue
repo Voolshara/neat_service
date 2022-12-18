@@ -6,7 +6,7 @@
       class="MainPageSwiper"
       :spaceBetween="300"
       :speed="600"
-      :direction="'vertical'"
+      :direction="'horizontal'"
       :slidesPerView="1"
       :modules="modules"
       v-if="isMobile()"

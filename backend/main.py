@@ -1,7 +1,12 @@
 from flask import Flask, request
 from flask_cors import CORS
-from aiogram import Bot, Dispatcher, executor, types
+from aiogram import Bot, Dispatcher, types
 import os, asyncio
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
+logging.debug('This will get logged')
+
 
 
 app = Flask(__name__)

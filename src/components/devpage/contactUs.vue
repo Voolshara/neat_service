@@ -4,21 +4,35 @@
     <div class="mainContacts">
       <div class="contacts">
         <a class="label"> Телефон:</a>
-        <p class="text">+7 (905) 623-23-30</p>
+        <p class="text">
+          <a href="tel:+79056232330">+7 (905) 623-23-30</a>
+        </p>
 
         <a class="label"> E-mail:</a>
-        <p class="text">info@neatech.ru</p>
+        <p class="text">
+          <a href="mailto:info@neatech.ru">info@neatech.ru</a>
+        </p>
 
         <a class="label"> Директор:</a>
-        <p class="text">artem@neatech.ru</p>
+        <p class="text">
+          <a href="mailto:artem@neatech.ru">artem@neatech.ru</a>
+        </p>
 
         <a class="label" style="margin-bottom: 10px">
           Старший менеджер по работе с клиентами:</a
         >
-        <p class="text">alex@neatech.ru</p>
+        <p class="text">
+          <a href="mailto:alex@neatech.ru">alex@neatech.ru</a>
+        </p>
 
         <a class="label"> Адрес:</a>
-        <p class="text">300026, Тула, проспект Ленина, 109</p>
+        <p class="text">
+          <a
+            href="http://maps.google.com/maps?q=loc: 
+54.165170,37.588210&navigate=yes"
+            >300026, Тула, проспект Ленина, 109</a
+          >
+        </p>
       </div>
       <YandexMap :settings="settings" :coordinates="[32, 50]" class="map" />
     </div>
@@ -85,6 +99,11 @@ export default {
       align-items: center;
       font-size: 23px;
       margin-bottom: 60px;
+
+      a {
+        text-decoration: none;
+        color: var(--color-red);
+      }
     }
 
     p {

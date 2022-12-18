@@ -192,7 +192,7 @@
               </p>
             </div>
           </div></swiper-slide
-        >
+        >titions.vue"; import Projects from "@/components/devpage/projects
 
         <swiper-slide
           ><div :class="'oneCompetition ' + activeIndexClasses[3]">
@@ -290,7 +290,7 @@ export default {
     return {
       activeIndexClasses: ["oneCompetition-active", "", "", "", "", "", ""],
       activeIndexComp: 0,
-      autoplay: { delay: 4000 },
+      autoplay: { delay: 8000 },
       swiperDirection: "vertiical",
     };
   },
