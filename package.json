@@ -20,6 +20,7 @@
     "vue-yandex-maps": "^1.0.4",
     "vue3-animate-onscroll": "^1.0.6",
     "vue3-particles": "^2.5.3",
+    "vue3-yandex-metrika": "^0.0.3",
     "vuex": "^4.0.2"
   },
   "devDependencies": {
