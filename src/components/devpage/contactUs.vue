@@ -37,21 +37,26 @@
       <YandexMap
         :settings="settings"
         :coordinates="[54.16517, 37.58821]"
+        :zoom="12"
         class="map"
       >
-        <ymap-marker marker-id="1" :coordinates="[54.16517, 37.58821]"
-      /></YandexMap>
+        <YandexMarker
+          marker-id="123"
+          :coordinates="[54.16517, 37.58821]"
+        ></YandexMarker>
+      </YandexMap>
     </div>
   </div>
 </template>
 
 <script>
-import { YandexMap } from "vue-yandex-maps";
+import { YandexMap, YandexMarker } from "vue-yandex-maps";
 
 export default {
   name: "CantacBlock",
   components: {
     YandexMap,
+    YandexMarker,
   },
   data() {
     return {
@@ -119,6 +124,7 @@ export default {
 
   .map {
     width: 600px;
+    height: 500px;
     margin-left: 100px;
   }
 }
