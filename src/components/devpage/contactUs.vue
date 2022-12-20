@@ -39,7 +39,7 @@
         :coordinates="[54.16517, 37.58821]"
         class="map"
       >
-        <ymap-marker marker-id="Mark1" :coords="[54.16517, 37.58821]"
+        <ymap-marker marker-id="1" :coordinates="[54.16517, 37.58821]"
       /></YandexMap>
     </div>
   </div>
@@ -208,5 +208,10 @@ export default {
   flex-direction: column;
 
   padding-top: 110px;
+}
+
+.map {
+  position: relative;
+  z-index: 10;
 }
 </style>
