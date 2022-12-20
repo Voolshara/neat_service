@@ -105,7 +105,7 @@ export default {
 
       if (no_error) {
         console.log("qu");
-        fetch("http://185.185.70.175:2700/send_contact", {
+        fetch("http://engine.neatech.ru/send_contact", {
           method: "POST", // *GET, POST, PUT, DELETE, etc.
           mode: "cors", // no-cors, *cors, same-origin
           cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached

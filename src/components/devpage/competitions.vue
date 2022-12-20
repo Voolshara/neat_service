@@ -290,7 +290,7 @@ export default {
     return {
       activeIndexClasses: ["oneCompetition-active", "", "", "", "", "", ""],
       activeIndexComp: 0,
-      autoplay: { delay: 8000 },
+      autoplay: { delay: 12000 },
       swiperDirection: "vertiical",
     };
   },

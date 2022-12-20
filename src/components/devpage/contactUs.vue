@@ -102,7 +102,7 @@ export default {
 
       a {
         text-decoration: none;
-        color: var(--color-red);
+        color: white;
       }
     }
 

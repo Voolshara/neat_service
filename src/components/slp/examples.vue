@@ -8,7 +8,7 @@
 
         <div
           class="data left"
-          v-animate-onscroll="{ down: 'animated fadeInLeft' }"
+          v-animate-onscroll="{ down: 'animated fadeInUp' }"
           data-animate-onscroll-offset="-200"
         >
           <p class="name">ПРОИЗВОДСТВО</p>
@@ -23,7 +23,7 @@
       <div class="dataContainer">
         <div
           class="data right"
-          v-animate-onscroll="{ down: 'animated fadeInRight' }"
+          v-animate-onscroll="{ down: 'animated fadeInUp' }"
           data-animate-onscroll-offset="-200"
         >
           <p class="name nameRight">ТРАНСПОРТ</p>
@@ -46,7 +46,7 @@
 
         <div
           class="data left"
-          v-animate-onscroll="{ down: 'animated fadeInLeft' }"
+          v-animate-onscroll="{ down: 'animated fadeInUp' }"
           data-animate-onscroll-offset="-200"
         >
           <p class="name">МЕДИЦИНА</p>
@@ -60,7 +60,7 @@
       <div class="dataContainer">
         <div
           class="data right"
-          v-animate-onscroll="{ down: 'animated fadeInRight' }"
+          v-animate-onscroll="{ down: 'animated fadeInUp' }"
           data-animate-onscroll-offset="-200"
         >
           <p class="name nameRight">СКЛАД</p>

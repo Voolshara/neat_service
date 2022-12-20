@@ -16,17 +16,15 @@
       />
 
       <!-- <img v-else class="backImg" src="@/assets/slp/mainblock.png" alt="" /> -->
-      <div class="text animate__animated animate__fadeInRight">
-        <p>Отслеживать персонал – наш конёк</p>
+      <div class="text">
+        <p class="animate__animated animate__fadeInUp">
+          Отслеживать персонал – наш конёк
+        </p>
       </div>
     </div>
     <div class="allBlocks">
       <div class="WhatisSLP">
-        <div
-          class="textSLP"
-          v-animate-onscroll="{ down: 'animated fadeInLeft' }"
-          data-animate-onscroll-offset="-200"
-        >
+        <div class="textSLP">
           <p class="name">Что такое система позиционирования?</p>
           <p class="desc">
             Система позиционирования - это механизм для определения положения
@@ -37,11 +35,7 @@
           </p>
         </div>
 
-        <div
-          class="scheme"
-          v-animate-onscroll="{ down: 'animated fadeInRight' }"
-          data-animate-onscroll-offset="-200"
-        >
+        <div class="scheme">
           <div class="blockDesc">
             <div class="blockName">
               <div class="highlightBlock">Уменьшение травматизма</div>
