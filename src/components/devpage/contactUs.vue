@@ -34,7 +34,13 @@
           >
         </p>
       </div>
-      <YandexMap :settings="settings" :coordinates="[32, 50]" class="map" />
+      <YandexMap
+        :settings="settings"
+        :coordinates="[54.16517, 37.58821]"
+        class="map"
+      >
+        <ymap-marker marker-id="Mark1" :coords="[54.16517, 37.58821]"
+      /></YandexMap>
     </div>
   </div>
 </template>
@@ -50,7 +56,7 @@ export default {
   data() {
     return {
       settings: {
-        apiKey: "", // Индивидуальный ключ API
+        apiKey: "f9f80be9-7cce-4cd9-bbc5-1b7a99dacd2c", // Индивидуальный ключ API
         lang: "ru_RU", // Используемый язык
         coordorder: "latlong", // Порядок задания географических координат
         debug: false, // Режим отладки
