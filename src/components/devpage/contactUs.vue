@@ -36,9 +36,15 @@
 
         <a class="label"> </a>
         <div class="text">
-          <a href=""><div class="vk-img"></div></a>
-          <a href=""><div class="tg-img"></div></a>
-          <a href=""><div class="watsapp-img"></div></a>
+          <a href="https://vk.com/neatechnologies" target="_blank"
+            ><div class="vk-img"></div
+          ></a>
+          <a href="https://tgtg.su/neatech" target="_blank"
+            ><div class="tg-img"></div
+          ></a>
+          <a href="https://wtsp.cc/79056232330" target="_blank"
+            ><div class="watsapp-img"></div
+          ></a>
         </div>
       </div>
       <YandexMap

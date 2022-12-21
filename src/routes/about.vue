@@ -15,5 +15,6 @@ export default {
 <style lang="scss" scoped>
 .container {
   height: 100vh;
+  margin-bottom: 200px;
 }
 </style>

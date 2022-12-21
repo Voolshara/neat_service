@@ -221,6 +221,8 @@ export default {
 
   color: white;
   background-color: black;
+
+  margin-bottom: 200px;
 }
 
 @media screen and (max-width: 768px) {
