@@ -15,6 +15,12 @@
         >Контакты</router-link
       >
     </div>
+
+    <div class="botSpace">
+      <a href=""><div class="vk-img"></div></a>
+      <a href=""><div class="tg-img"></div></a>
+      <a href=""><div class="watsapp-img"></div></a>
+    </div>
   </div>
 </template>
 
@@ -25,12 +31,52 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.vk-img {
+  background-image: url("@/assets/mainpage/vk.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+}
+
+.tg-img {
+  background-image: url("@/assets/mainpage/tg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.watsapp-img {
+  background-image: url("@/assets/mainpage/watsapp.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+}
 .NavDropDown {
   .topSpace {
     width: 80%;
     height: 140px;
     border-bottom: white 1px solid;
     margin-bottom: 30px;
+  }
+
+  .botSpace {
+    padding-top: 20px;
+    border-top: 1px white solid;
+    width: 80%;
+
+    align-self: flex-start;
+
+    position: absolute;
+    bottom: 20px;
+    left: 40px;
+
+    display: flex;
+    flex-direction: row;
   }
 
   .NavContainer {
@@ -59,11 +105,12 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
 
   position: relative;
   z-index: 10;
   width: 350px;
-  height: 100%;
+  height: 100vh;
 
   background-color: rgba($color: #000000, $alpha: 0.95);
 }

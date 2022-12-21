@@ -33,6 +33,13 @@
             >300026, Тула, проспект Ленина, 109</a
           >
         </p>
+
+        <a class="label"> </a>
+        <div class="text">
+          <a href=""><div class="vk-img"></div></a>
+          <a href=""><div class="tg-img"></div></a>
+          <a href=""><div class="watsapp-img"></div></a>
+        </div>
       </div>
       <YandexMap
         :settings="settings"
@@ -79,6 +86,32 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.vk-img {
+  background-image: url("@/assets/mainpage/vk.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+}
+
+.tg-img {
+  background-image: url("@/assets/mainpage/tg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.watsapp-img {
+  background-image: url("@/assets/mainpage/watsapp.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+}
+
 .contactText {
   font-size: 50px;
   margin: 0;
@@ -214,10 +247,5 @@ export default {
   flex-direction: column;
 
   padding-top: 110px;
-}
-
-.map {
-  position: relative;
-  z-index: 10;
 }
 </style>

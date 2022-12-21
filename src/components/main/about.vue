@@ -120,7 +120,7 @@ export default {
 
 @media screen and (min-width: 768px) {
   .about {
-    margin-top: 300px;
+    margin-top: 25vh;
     margin-bottom: 300px;
   }
 }
